@@ -1,0 +1,12 @@
+title Communication between Controller, Model and View when Dead
+
+Controller->Model: \"Is vehicle Alive?"
+Model->Controller: \"Yes"
+note left of Controller: check Stack Order
+Controller->Model: \"Move this way"
+note right of Model: Model changes
+Model->View: \"I juste update my state"
+View->Model: Check position
+note right of View: Update itself with\n Model data
+Controller->View: \"Move the displayed view"
+note right of View: Moves the displayed view

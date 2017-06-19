@@ -1,0 +1,7 @@
+title Communication between Controller, Model and View when Dead
+
+Controller->Model: \"Is vehicle Alive?"
+Model->Controller: \"No"
+note left of Controller: clear Stack Order
+Controller->View: \"Display message "Message !!" "
+note right of View: Diplays \"Message !!"
