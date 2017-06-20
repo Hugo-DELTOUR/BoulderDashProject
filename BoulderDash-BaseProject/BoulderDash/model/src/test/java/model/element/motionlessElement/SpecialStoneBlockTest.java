@@ -27,7 +27,7 @@ public class SpecialStoneBlockTest {
 	}
 
 	@Test
-	public void test() {
+	public void testSpecialStoneBlock() {
 		fail("Not yet implemented");
 	}
 

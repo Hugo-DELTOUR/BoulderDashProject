@@ -27,8 +27,23 @@ public class DiamondTest {
 	}
 
 	@Test
-	public void test() {
+	public void testDoNothing() {
 		fail("Not yet implemented");
 	}
-
+	@Test
+	public void testDie() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testMoveDown() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testMoveRight() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testMoveLeft() {
+		fail("Not yet implemented");
+	}
 }

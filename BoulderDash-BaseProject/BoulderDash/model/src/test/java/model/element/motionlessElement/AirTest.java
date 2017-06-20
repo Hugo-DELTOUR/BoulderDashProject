@@ -27,7 +27,7 @@ public class AirTest {
 	}
 
 	@Test
-	public void test() {
+	public void testAir() {
 		fail("Not yet implemented");
 	}
 

@@ -27,7 +27,7 @@ public class UnbreakableWallTest {
 	}
 
 	@Test
-	public void test() {
+	public void testUnbreakableWall() {
 		fail("Not yet implemented");
 	}
 

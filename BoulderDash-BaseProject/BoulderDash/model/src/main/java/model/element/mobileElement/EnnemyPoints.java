@@ -2,6 +2,8 @@ package model.element.mobileElement;
 
 import javax.swing.text.Position;
 
+import common.Sprite;
+
 public class EnnemyPoints extends Ennemy{
 	
 	private Sprite spriteAnim1;

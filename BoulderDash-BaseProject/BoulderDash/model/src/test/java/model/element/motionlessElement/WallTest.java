@@ -27,7 +27,7 @@ public class WallTest {
 	}
 
 	@Test
-	public void test() {
+	public void testWall() {
 		fail("Not yet implemented");
 	}
 

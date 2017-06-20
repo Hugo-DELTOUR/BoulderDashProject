@@ -25,10 +25,51 @@ public class MobileTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
 	@Test
-	public void test() {
+	public void testMoveUp() {
 		fail("Not yet implemented");
 	}
+	@Test
+	public void testMoveDown() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testMoveRight() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testMoveLeft() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testSetposition() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testSetX() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testSetY() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testSetMap() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testIsAlive() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testDie() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testIsCrashed() {
+		fail("Not yet implemented");
+	}
+
 
 }

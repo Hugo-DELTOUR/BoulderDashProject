@@ -1,5 +1,7 @@
 package model.element.mobileElement;
 
+import common.Sprite;
+
 public class Rock extends Mobile {
 
 	private Sprite spriteAnim1;

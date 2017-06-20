@@ -2,6 +2,8 @@ package model.element.mobileElement;
 
 import static org.junit.Assert.*;
 
+import javax.swing.text.Position;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -27,7 +29,39 @@ public class EnnemyPointsTest {
 	}
 
 	@Test
-	public void test() {
+	public void testDoNothing() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testDie() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testMoveDown() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testMoveRight() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testMoveLeft() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testMoveUp() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testDirection() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public Position testPosition() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testLoot() {
 		fail("Not yet implemented");
 	}
 

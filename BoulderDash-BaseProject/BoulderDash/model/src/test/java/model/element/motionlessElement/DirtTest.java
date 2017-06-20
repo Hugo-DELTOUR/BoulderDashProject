@@ -27,7 +27,7 @@ public class DirtTest {
 	}
 
 	@Test
-	public void test() {
+	public void testDirt() {
 		fail("Not yet implemented");
 	}
 

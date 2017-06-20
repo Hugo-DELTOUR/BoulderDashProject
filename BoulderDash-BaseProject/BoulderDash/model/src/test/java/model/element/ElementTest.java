@@ -27,7 +27,11 @@ public class ElementTest {
 	}
 
 	@Test
-	public void test() {
+	public void testSetSprite() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testSetPermeability() {
 		fail("Not yet implemented");
 	}
 

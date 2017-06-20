@@ -27,7 +27,7 @@ public class DoorTest {
 	}
 
 	@Test
-	public void test() {
+	public void testDoor() {
 		fail("Not yet implemented");
 	}
 

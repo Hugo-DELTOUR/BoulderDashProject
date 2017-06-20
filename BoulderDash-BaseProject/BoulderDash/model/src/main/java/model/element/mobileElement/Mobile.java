@@ -2,9 +2,10 @@ package model.element.mobileElement;
 
 import java.awt.Point;
 
+import common.Permeability;
+import common.Sprite;
 import model.IMap;
-import model.Permeability;
-import model.Sprite;
+import model.IMobile;
 import model.element.Element;
 
 public class Mobile extends Element implements IMobile{

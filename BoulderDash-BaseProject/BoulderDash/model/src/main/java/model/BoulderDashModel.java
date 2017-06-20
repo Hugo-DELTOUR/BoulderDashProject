@@ -2,7 +2,7 @@ package model;
 
 public class BoulderDashModel {
 	private IMap map;
-	private IMObile Rockford;
+	private IMobile Rockford;
 	
 	public IMap getMap() {
 		return map;
@@ -10,10 +10,10 @@ public class BoulderDashModel {
 	public void setMap(IMap map) {
 		this.map = map;
 	}
-	public IMObile getRockford() {
+	public IMobile getRockford() {
 		return Rockford;
 	}
-	public void setRockford(IMObile rockford) {
+	public void setRockford(IMobile rockford) {
 		Rockford = rockford;
 	}
 	

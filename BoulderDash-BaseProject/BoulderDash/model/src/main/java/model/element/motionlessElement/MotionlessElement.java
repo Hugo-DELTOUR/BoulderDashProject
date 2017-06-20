@@ -1,5 +1,7 @@
 package model.element.motionlessElement;
 
+import common.Permeability;
+import common.Sprite;
 import model.element.Element;
 
 public class MotionlessElement extends Element{

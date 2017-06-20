@@ -27,8 +27,12 @@ public class BoulderDashModelTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testSetMap() {
+		fail("Not yet implemented");	
+	}
+	@Test
+	public void testSetRockford() {
+		fail("Not yet implemented");	
 	}
 
 }

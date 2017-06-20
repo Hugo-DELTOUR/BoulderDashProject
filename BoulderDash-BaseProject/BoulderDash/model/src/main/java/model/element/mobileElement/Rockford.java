@@ -1,5 +1,7 @@
 package model.element.mobileElement;
 
+import common.Sprite;
+
 public class Rockford extends Mobile {
 
 	private Sprite sprite;

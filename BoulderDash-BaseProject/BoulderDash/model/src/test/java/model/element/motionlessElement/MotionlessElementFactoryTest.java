@@ -27,8 +27,32 @@ public class MotionlessElementFactoryTest {
 	}
 
 	@Test
-	public void test() {
+	public void testCreateWall() {
 		fail("Not yet implemented");
 	}
-
+	@Test
+	public void testCreateUnbreakableWall() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testDirt() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testAir() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testDoor() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testSpecialStoneBlock() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testGetFromFileSymbol() {
+		fail("Not yet implemented");
+	}
+	
 }

@@ -27,7 +27,23 @@ public class MapTest {
 	}
 
 	@Test
-	public void test() {
+	public void testLoadFile() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testSetWidth() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testSetheight() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testOnTheMapXY() {
+		fail("Not yet implemented");
+	}
+	@Test
+	public void testSetMobileAsChanged() {
 		fail("Not yet implemented");
 	}
 

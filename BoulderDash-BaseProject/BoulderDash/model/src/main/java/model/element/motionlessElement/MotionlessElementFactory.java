@@ -1,6 +1,8 @@
 package model.element.motionlessElement;
 
-public class MotionlessElementFactory {
+import model.element.Element;
+
+public class MotionlessElementFactory extends Element {
 	public static Wall wall;
 	public static Unbreakable unbreakable;
 	public static Dirt dirt;

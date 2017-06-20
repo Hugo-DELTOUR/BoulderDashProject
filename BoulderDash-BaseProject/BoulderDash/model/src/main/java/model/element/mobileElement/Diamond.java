@@ -2,6 +2,8 @@ package model.element.mobileElement;
 
 import java.awt.Point;
 
+import common.Sprite;
+
 public class Diamond extends Mobile {
 	
 	private Sprite spriteAnim1;

@@ -1,6 +1,9 @@
 package model.element;
 
+import common.Permeability;
+import common.Sprite;
 import model.BoulderDashModel;
+import model.IElement;
 
 public class Element extends BoulderDashModel implements IElement{
 	
