@@ -1,5 +1,48 @@
 package model.element.mobileElement;
 
-public class EnnemyPoints extends Ennemy{
+import javax.swing.text.Position;
 
+public class EnnemyPoints extends Ennemy{
+	
+	private Sprite spriteAnim1;
+	private Sprite spriteAnim2;
+	private Sprite spriteAnim3;
+	private Sprite spriteAnim4;
+	
+	public void loot(){
+		
+	}
+	
+	public void doNothing(){
+		
+	}
+	
+	public void die(){
+		
+	}
+	
+	public void moveDown(){
+		
+	}
+	
+	public void moveLeft(){
+		
+	}
+	
+	public void moveRight(){
+		
+	}
+	
+	public void direction(){
+		
+	}
+	
+	public Position position(){
+		
+	}
+
+	public EnnemyPoints() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 }
