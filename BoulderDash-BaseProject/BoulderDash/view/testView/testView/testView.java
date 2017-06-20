@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import fr.exia.showboard.BoardFrame;
 import view.BoulderDashView;
 
 public class testView {
@@ -48,7 +49,10 @@ public class testView {
 	
 	@Test
 	public void keyCodeToUserOrder() {
-		assertEquals(KeyEvent.VK_RIGHT,KeyEvent.VK_RIGHT);
+		int expected = KeyEvent.VK_RIGHT;
+		BoardFrame instance = new BoardFrame();
+		KeyEvent key = new KeyEvent(instance, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0,  KeyEvent.VK_UP,'Z');
+		assertEquals(expected,key);
 	}
 
 	@Test
