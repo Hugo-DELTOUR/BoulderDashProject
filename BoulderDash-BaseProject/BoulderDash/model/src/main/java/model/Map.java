@@ -1,8 +1,9 @@
 package model;
 
 import java.util.Observable;
-
-
+import model.BoulderDashModel;
+import model.element.mobileElement.Rockford;
+import model.BoulderDashModel;
 
 public class Map extends Observable  {
 
@@ -29,19 +30,21 @@ public class Map extends Observable  {
 		this.onTheMap = onTheMap;
 	}
 	
-	public IMap Map (String fileName){   // TODO vérifier UML
-		
+	public Map (String fileName){  
+		super();
+        this.loadFile(fileName ,1,1);
 	}
 	
-	public void loadFile (String fileName){
-		
+	public void loadFile (String fileName,  final int RockfordStartX, final int RockfordStartY){
+		this.setMap(new Map(fileName));
+		this.setRockford(new Rockford(RockfordStartX, RockfordStartY ) this.getMap);
 	}
 	
 	public void setMobileAsChanged(){
-		
+		this.getMap().setMobileHasChanged();
 	}
 	
 	public Observable getObservable(){
-		
+		return this;
 	}
 }

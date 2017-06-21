@@ -2,39 +2,61 @@ package model.element.mobileElement;
 
 import javax.swing.text.Position;
 
+import common.Permeability;
 import common.Sprite;
+import model.IMap;
 
 public class Ennemy extends Mobile {
 
-	private Sprite spriteAnim1;
-	private Sprite spriteAnim2;
-	private Sprite spriteAnim3;
-	private Sprite spriteAnim4;
-	private Sprite spriteExplore;
+	public static final Sprite sprite = new Sprite('@', /*TODO*/);
+	private static Sprite spriteAnim1;
+	private static Sprite spriteAnim2;
+	private static Sprite spriteAnim3;
+	private static Sprite spriteAnim4;
+	private static Sprite spriteExplode;
+	
+	
+	public Ennemy(int x, int y, Sprite sprite, IMap map){
+		super(x,y, sprite, map, Permeability.BLOCKING);
+	}
 	
 	
 	public void doNothing(){
-		
+		 this.setMobileHasChanged();
 	}
 	
 	public void die(){
-		
+	    this.setSprite(spriteExplode);
+	    this.setAlive(false);
+        this.setMobileHasChanged();
 	}
 	
 	public void moveDown(){
-		
+		 this.setY(this.getY() + 1);
+	     this.setMobileHasChanged();
+		 this.setSprite(spriteAnim2);
+
 	}
 	
 	public void moveLeft(){
-		
+		this.setX(this.getX() - 1);
+        this.setMobileHasChanged();
+	    this.setSprite(spriteAnim3);
+
 	}
 	
 	public void moveRight(){
-		
+		this.setX(this.getX() + 1);
+        this.setMobileHasChanged();
+	    this.setSprite(spriteAnim4);
+
 	}
 	
 	public void moveUp(){
-		
+		 this.setY(this.getY() - 1);
+	     this.setMobileHasChanged();
+	     this.setSprite(spriteAnim1);
+	     
 	}
 	
 	public void direction(){
@@ -45,9 +67,6 @@ public class Ennemy extends Mobile {
 		
 	}
 
-	public Ennemy() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 	
 }

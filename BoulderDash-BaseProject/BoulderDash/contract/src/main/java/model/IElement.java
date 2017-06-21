@@ -1,7 +1,10 @@
 package model;
 
+import common.Permeability;
+import common.Sprite;
+
 public interface IElement {
-	public void getSprite();
-	public void getPermeability();
+	public Sprite getSprite();
+	public Permeability getPermeability();
 	public void getImage();
 }
