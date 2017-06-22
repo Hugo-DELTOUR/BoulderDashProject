@@ -53,7 +53,7 @@ public class BoulderDashController implements IBoulderDashController, IOrderPerf
 	}
 
 	/**
-	 * Start.
+	 * Game loop Start.
 	 *
 	 * @throws SQLException
 	 *             the SQL exception
