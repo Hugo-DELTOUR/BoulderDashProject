@@ -26,6 +26,7 @@ import Shared.IElement;
 import Shared.IMap;
 import Shared.IMobile;
 import Shared.IOrderPerformer;
+import Shared.Sprite;
 import Shared.UserOrder;
 import bouchon.BouchonMap;
 import bouchon.BouchonRockford;
@@ -33,10 +34,9 @@ import fr.exia.showboard.BoardFrame;
 import fr.exia.showboard.IPawn;
 import fr.exia.showboard.ISquare;
 
-public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener{
+public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener, ActionListener{
 	
-	private int mapView = 10;
-	private int squareSize = 20;
+	private int squareSize = 1;
 	private Rectangle closeView;
 	private int view = 600;
 	private IMap map;
@@ -44,12 +44,11 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener{
 	private IOrderPerformer orderPerformer;
 	
     public BoulderDashView(IMap map, IMobile rockford) throws IOException {
-        this.setView(mapView);
         this.setMap(map);
         this.setRockford(rockford);
         this.getRockford();
-      	this.setCloseView(new Rectangle(0, this.getRockford().getY(), this.getMap().getWidth(), mapView));
-        SwingUtilities.invokeLater(this);	
+      	this.setCloseView(new Rectangle(0, 0, 400, 300));
+        SwingUtilities.invokeLater(this);
     }
 	
 	public void displayMessage(String message) {
@@ -60,9 +59,10 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener{
 	@Override
     public final void run(){
     	final BoardFrame boardFrame = new BoardFrame("BoulderDash");
-    	boardFrame.setDimension(new Dimension(this.getMap().getWidth(), this.getMap().getHeight()));
+    	boardFrame.setDimension(new Dimension(800, 600));
     	boardFrame.setDisplayFrame(this.closeView);
-    	boardFrame.setSize(600, 400);
+    	boardFrame.setSize(this.closeView.width * squareSize,this.closeView.height * squareSize);
+    	boardFrame.setHeightLooped(true);
     	boardFrame.addKeyListener(this);
     	boardFrame.setFocusable(true);
     	boardFrame.setResizable(true);
@@ -78,19 +78,13 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener{
     	
     	this.getMap().getObservable().addObserver(boardFrame.getObserver());
     	this.followRockford();
-		try {
-			boardFrame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:\\Users\\delto\\Downloads\\BoulderDashProject-master\\BoulderDashBackground.jpg")))));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-    	boardFrame.setVisible(true);
     	
+    	boardFrame.setVisible(true);
     }
     
     public void show(int yStart){
     	int y = yStart % this.getMap().getHeight();
-    	for(int view = 0; view< this.getView(); view++){
+    	for(int view = 0; view < this.getView(); view++){
     		for(int x = 0; x < this.getMap().getWidth(); x++){
     			if((x == this.getRockford().getX()) && (y == yStart)){
     				System.out.print(((IElement)this.getRockford()).getSprite().getConsoleImage());
@@ -110,22 +104,27 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener{
     	switch(keyCode){
     	case KeyEvent.VK_LEFT:	
     		userOrder = UserOrder.LEFT;
+    		this.getRockford().moveLeft();
     		break;
     		
     	case KeyEvent.VK_UP:
     		userOrder = UserOrder.UP;
+    		this.getRockford().moveUp();
     		break;
     		
     	case KeyEvent.VK_RIGHT:
     		userOrder = UserOrder.RIGHT;
+    		this.getRockford().moveRight();
     		break;
     		
     	case KeyEvent.VK_DOWN:
     		userOrder = UserOrder.DOWN;
+    		this.getRockford().moveDown();
     		break;
     		
     	default:
     		userOrder = UserOrder.NOP;
+    		this.getRockford().doNothing();
     		break;
     	}
     	
@@ -137,43 +136,11 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener{
     }
     
     public void keyPressed(KeyEvent keyEvent){
-    	int keyCode = keyEvent.getKeyCode();
-    	if(keyCode == KeyEvent.VK_RIGHT){
-    		rockford.moveRight();
-    	}
-    	else if(keyCode == KeyEvent.VK_LEFT){
-    		rockford.moveLeft();
-    	}
-    	else if(keyCode == KeyEvent.VK_UP){
-    		rockford.moveUp();
-    	}
-    	else if(keyCode == KeyEvent.VK_DOWN){
-    		rockford.moveDown();
-    	}
-    	else{
-    		rockford.doNothing();
-    	}
+        this.getOrderPerformer().orderPerformer(keyCodeToUserOrder(keyEvent.getKeyCode()));
     }
     
     public void keyReleased(KeyEvent keyEvent){
     	
-    	int keyCode = keyEvent.getKeyCode();
-    	
-    	if(keyCode == KeyEvent.VK_RIGHT){
-    		rockford.moveRight();
-    	}
-    	else if(keyCode == KeyEvent.VK_LEFT){
-    		rockford.moveLeft();
-    	}
-    	else if(keyCode == KeyEvent.VK_UP){
-    		rockford.moveUp();
-    	}
-    	else if(keyCode == KeyEvent.VK_DOWN){
-    		rockford.moveDown();
-    	}
-    	else{
-    		rockford.doNothing();
-    	}
     }
     
     public void followRockford(){
@@ -208,7 +175,9 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener{
 		this.map = map;
 		for(int x = 0; x < this.getMap().getWidth(); x++){
 			for(int y = 0; y< this.getMap().getHeight(); y++){
-				this.getMap().getOnTheMapXY(x, y).getSprite().loadedImage();
+				IElement test = this.getMap().getOnTheMapXY(x, y);
+				Sprite testSpr = test.getSprite();
+				testSpr.loadedImage();
 			}
 		}
 	}
@@ -227,5 +196,35 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener{
 	
 	public void setOrderPerformer(IOrderPerformer orderPerformer) {
 		this.orderPerformer = orderPerformer;
+	}
+		
+	public void WelcomeScreen() throws IOException{
+			
+			JFrame fen = new JFrame("WelcomeScreen");
+			GridBagConstraints GBC = new GridBagConstraints();
+			
+			fen.setSize(600,400);
+			fen.setTitle("BoulderDash");
+			fen.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:\\Users\\delto\\Downloads\\BoulderDashProject-master\\BoulderDashBackground.jpg")))));
+				    	
+			fen.setLayout(new GridBagLayout());
+	
+			JButton button = new JButton("Play");
+			button.addActionListener((ActionListener) this);
+			
+			GBC.fill = GridBagConstraints.HORIZONTAL;
+			GBC.ipady=10;
+			GBC.ipadx=40;
+			GBC.anchor=GridBagConstraints.PAGE_END;
+			GBC.insets=new Insets(250, 10, 10, 10);
+			GBC.gridx = 1;
+			GBC.gridwidth=2;
+			GBC.gridy = 1;
+			fen.add(button, GBC);
+					
+			fen.setVisible(true);		
+		}
+	public void actionPerformed(ActionEvent e){
+		System.out.println("clic");
 	}
 }
