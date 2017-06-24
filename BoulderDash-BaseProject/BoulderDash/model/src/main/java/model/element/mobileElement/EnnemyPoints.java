@@ -22,7 +22,8 @@ public class EnnemyPoints extends Ennemy{
 		spriteAnim1.loadImage();
 		spriteAnim2.loadImage();
 		spriteAnim3.loadImage();
-		spriteAnim4.loadImage();	}
+		spriteAnim4.loadImage();	
+		}
 	
 	
 	public void loot(){

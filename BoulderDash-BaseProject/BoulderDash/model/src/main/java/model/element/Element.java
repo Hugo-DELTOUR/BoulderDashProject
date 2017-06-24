@@ -2,8 +2,6 @@ package model.element;
 
 import java.awt.Image;
 import java.awt.Point;
-import java.io.IOException;
-
 import common.Permeability;
 import common.Sprite;
 import model.BoulderDashModel;

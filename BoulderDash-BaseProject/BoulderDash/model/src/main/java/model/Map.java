@@ -3,7 +3,6 @@ package model;
 import java.util.Observable;
 import model.BoulderDashModel;
 import model.element.mobileElement.Rockford;
-import model.BoulderDashModel;
 
 public class Map extends Observable implements IMap  {
 

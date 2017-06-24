@@ -1,7 +1,11 @@
 package controller;
 
+import java.io.IOException;
+
 import common.UserOrder;
 
 public interface IOrderPerformer {
-	public void orderPerformer(UserOrder userOrder);
+	
+	void orderPerform(UserOrder userOrder) throws IOException;
+
 }

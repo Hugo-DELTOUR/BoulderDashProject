@@ -31,11 +31,7 @@ public class Ennemy extends Mobile {
 		spriteExplode.loadImage();	} // It may be wrong !!!!
 	
 	
-//	public Ennemy(int x, int y, Sprite sprite, IMap map) throws IOException{
-//		super(x,y, new Sprite('@', ImageIO.read(new File("ress/74359.png")).getSubimage(cols * width, rows *height ,width,height)), map, Permeability.BLOCKING);
-//		this.setX(x);
-//		this.setY(y);
-//	}
+
 	
 	
 	public void doNothing(){
