@@ -1,6 +1,5 @@
 package controller;
 
-import java.awt.Point;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -12,15 +11,15 @@ import view.IBoulderDashView;
  * <h1>The Class ControllerFacade provides a facade of the Controller
  * component.</h1>
  *
- * first @author Jean-Aymeric DIET jadiet@cesi.fr
- * second @author Robin MAISANO robin.maisano@viacesi.fr
+ * first @author Jean-Aymeric DIET jadiet@cesi.fr second @author Robin MAISANO
+ * robin.maisano@viacesi.fr
  * 
  * @version 2.0
  */
 public class BoulderDashController implements IBoulderDashController, IOrderPerformer {
 
-	/** The constant speed 
-	 * Game will be in 4Hz, 4 fps
+	/**
+	 * The constant speed Game will be in 4Hz, 4 fps
 	 */
 	private static final int speed = 250;
 
@@ -59,7 +58,7 @@ public class BoulderDashController implements IBoulderDashController, IOrderPerf
 	 *             the SQL exception
 	 */
 	public void play() throws InterruptedException {
-		while (this.getModel().getRockford().isAlive()) {
+		while (this.getModel().getRockford().isAlive() && this.getModel().getWin() != true) {
 			Thread.sleep(speed);
 			switch (this.getStackOrder()) {
 			case UP:
@@ -84,14 +83,15 @@ public class BoulderDashController implements IBoulderDashController, IOrderPerf
 				this.getModel().getRockford().doNothing();
 			}
 			this.getView().followRockford();
-			this.getModel().getMap().update();
+			this.getModel().update();
 		}
-		
-//		this.getModel().
-		this.getView().displayMessage("You had a painful  death. RIP.");
+		if (this.getModel().getWin()) {
+			this.getView().displayMessage("Congratulations, you win !");
+		} else {
+			this.getView().displayMessage("You had a painful  death. RIP.");
+		}
 	}
 
-	
 	/**
 	 * Gets the view.
 	 *

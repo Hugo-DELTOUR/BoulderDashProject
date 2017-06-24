@@ -20,8 +20,8 @@ public class Air extends MotionlessElement {
 	public static final Sprite sprite = new Sprite(' ', bigImg.getSubimage(cols * width, rows *height ,width,height));
 
 	
-	public Air(Sprite sprite, Permeability permeability) {
-		super(sprite, permeability);
+	public Air() {
+		super(sprite, Permeability.PENETRABLE);
 		// TODO Auto-generated constructor stub
 	}
 

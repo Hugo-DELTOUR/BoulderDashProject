@@ -1,16 +1,16 @@
 package model.element.motionlessElement;
 
+import common.Permeability;
 import common.Sprite;
-import fr.exia.insanevehicles.shared.Permeability;
 
 public class Wall extends MotionlessElement {
 
 	
 
-	public static final Sprite sprite = new Sprite('H', /*TODO*/);
+	public static final Sprite sprite = new Sprite('H', null /*TODO*/);
 
-	public Wall(Sprite sprite, common.Permeability permeability) {
-		super(sprite, permeability);
+	public Wall() {
+		super(sprite, Permeability.BLOCKING);
 		// TODO Auto-generated constructor stub
 	}
 }

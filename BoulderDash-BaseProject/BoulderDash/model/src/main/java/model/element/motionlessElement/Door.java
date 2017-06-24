@@ -1,16 +1,16 @@
 package model.element.motionlessElement;
 
+import common.Permeability;
 import common.Sprite;
-import fr.exia.insanevehicles.shared.Permeability;
 
 public class Door extends MotionlessElement {
 
 
-	public static final Sprite sprite = new Sprite('E', /*TODO*/);
+	public static final Sprite sprite = new Sprite('E', null/*TODO*/);
 
 
-	public Door(Sprite sprite, common.Permeability permeability) {
-		super(sprite, permeability);
+	public Door() {
+		super(sprite, Permeability.PENETRABLE);
 		// TODO Auto-generated constructor stub
 	}
 

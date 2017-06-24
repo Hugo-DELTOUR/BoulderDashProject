@@ -4,12 +4,8 @@ import common.Permeability;
 import common.Sprite;
 import model.element.Element;
 
-public class MotionlessElementFactory extends Element {
+public class MotionlessElementFactory{
 	
-	public MotionlessElementFactory(int x, int y, Sprite sprite, Permeability permeability) {
-		super(x, y, sprite, permeability);
-		// TODO Auto-generated constructor stub
-	}
 
 	private static Wall wall = new Wall();
 	private static UnbreakableWall unbreakableWall = new UnbreakableWall();

@@ -2,5 +2,8 @@ package common;
 
 public enum Permeability {
 	BLOCKING,
-	PENETRABLE
+	PENETRABLE,
+	IMMUNITY,
+	ROCKONLY,
+	ENNEMY
 }

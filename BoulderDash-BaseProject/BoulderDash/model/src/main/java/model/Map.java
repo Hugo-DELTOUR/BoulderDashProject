@@ -1,15 +1,16 @@
 package model;
 
 import java.util.Observable;
-import model.BoulderDashModel;
-import model.element.mobileElement.Rockford;
-import model.BoulderDashModel;
 
-public class Map extends Observable  {
+import model.element.mobileElement.Rockford;
+import model.element.motionlessElement.Air;
+import model.element.motionlessElement.MotionlessElementFactory;
+
+public class Map extends Observable implements IMap  {
 
 	private int width;
 	private int height;
-	private IElement[][] onTheMap;
+	private IElement[][] map;
 	
 	public int getWidth() {
 		return width;
@@ -23,11 +24,14 @@ public class Map extends Observable  {
 	public void setHeight(int height) {
 		this.height = height;
 	}
-	public IElement[][] getOnTheMapXY() {
-		return onTheMap;
+	public IElement getOnTheMapXY(int x, int y) {
+		return map[x][y];
 	}
-	public void setOnTheMapXY(IElement[][] onTheMap) {
-		this.onTheMap = onTheMap;
+	public void setOnTheMapXY(IElement element, int x, int y) {
+		map[x][y] = element;
+	}
+	public void setAirOnTheMapXY(int x, int y){
+		this.setOnTheMapXY(MotionlessElementFactory.createAir(), x, y);
 	}
 	
 	public Map (String fileName){  
@@ -40,11 +44,22 @@ public class Map extends Observable  {
 		this.setRockford(new Rockford(RockfordStartX, RockfordStartY ) this.getMap);
 	}
 	
-	public void setMobileAsChanged(){
-		this.getMap().setMobileHasChanged();
-	}
-	
 	public Observable getObservable(){
 		return this;
+	}
+	@Override
+	public IElement getOnTheRoad(int x, int y) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void setMobileHasChanged() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void updateMap() {
+		// TODO Auto-generated method stub
+		
 	}
 }
