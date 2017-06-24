@@ -1,9 +1,7 @@
 package model.element.mobileElement;
 
 import java.awt.Image;
-import java.awt.Point;
 import common.Permeability;
-import common.Sprite;
 import model.IMap;
 import model.IMobile;
 import model.element.Element;

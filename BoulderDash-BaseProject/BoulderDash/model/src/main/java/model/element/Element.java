@@ -58,15 +58,15 @@ public class Element extends BoulderDashModel implements IElement{
 	public void setX(int x){
 
 		this.getPosition().x =x;
-		if (this.isCrashed()){
-			this.die();
-		}
+//		if (this.isCrashed()){
+//			this.die();
+//		}
 	}
 	
 	public void setY(int y){
         this.getPosition().y = (y + this.getMap().getHeight()) % this.getMap().getHeight();
-        if (this.isCrashed()) {
-            this.die();
-        }	
+//        if (this.isCrashed()) {
+//            this.die();
+//        }	
 	}
 }

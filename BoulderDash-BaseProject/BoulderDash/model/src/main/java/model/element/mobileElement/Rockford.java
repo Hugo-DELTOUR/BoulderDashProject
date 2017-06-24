@@ -1,12 +1,7 @@
 package model.element.mobileElement;
 
 import common.Sprite;
-import model.IMap;
-
-import java.io.File;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 import common.Permeability;
 
@@ -23,14 +18,24 @@ public class Rockford extends Mobile {
 	final static int cols = 5;
 	
 	
-	public Rockford(int x, int y, IMap map) throws IOException{
-		super(x,y, new Sprite('R', ImageIO.read(new File("ress/74359.png")).getSubimage(cols * width, rows *height ,width,height)), map, Permeability.BLOCKING);
+	public Rockford(int x, int y, Character character, String name, Permeability permeability) throws IOException {
+		super(x, y, character, name, permeability);
 		spriteGoUp.loadImage();
 		spriteGoDown.loadImage();
 		spriteGoLeft.loadImage();
 		spriteGoRight.loadImage();
-		spriteExplode.loadImage();
-	}
+		spriteExplode.loadImage();	}
+
+	
+	
+//	public Rockford(int x, int y, IMap map) throws IOException{
+//		super(x,y, new Sprite('R', ImageIO.read(new File("ress/74359.png")).getSubimage(cols * width, rows *height ,width,height)), map, Permeability.BLOCKING);
+//		spriteGoUp.loadImage();
+//		spriteGoDown.loadImage();
+//		spriteGoLeft.loadImage();
+//		spriteGoRight.loadImage();
+//		spriteExplode.loadImage();
+//	}
 
 	public void doNothing(){
 		this.getMap().setMobileHasChanged();

@@ -1,17 +1,14 @@
 package model.element.mobileElement;
 
-import java.io.File;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 import common.Permeability;
 import common.Sprite;
-import model.IMap;
 
 public class Rock extends Mobile {
 
 	
+
 
 	private static Sprite spriteAnim1;
 	private static Sprite spriteAnim2;
@@ -22,16 +19,15 @@ public class Rock extends Mobile {
 	final static int rows = 5;
 	final static int cols = 5;
 	
-	
-	public Rock(int x, int y, IMap map) throws IOException {
-		super(x, y, new Sprite('O', ImageIO.read(new File("ress/74359.png")).getSubimage(cols * width, rows *height ,width,height))	, map, Permeability.BLOCKING);
-		
+	public Rock(int x, int y, Character character, String name, Permeability permeability) throws IOException {
+		super(x, y, character, name, permeability);
 		spriteAnim1.loadImage();
 		spriteAnim2.loadImage();
 		spriteAnim3.loadImage();
 		spriteAnim4.loadImage();
+	}
+	
 
-        }
 	
 	
 	public void doNothing(){

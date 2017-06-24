@@ -1,12 +1,8 @@
 package model.element.motionlessElement;
 
-import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
-
 import common.Permeability;
-import common.Sprite;
 
 public class Dirt extends MotionlessElement{
 	
@@ -18,7 +14,12 @@ public class Dirt extends MotionlessElement{
 	final static int cols = 5;
 	
 	
-	public Dirt() throws IOException {
-		super(new Sprite(' ', ImageIO.read(new File("ress/74359.png")).getSubimage(cols * width, rows *height ,width,height)), Permeability.PENETRABLE);		
+	public Dirt() {
+		super('+', "74359.png" , Permeability.PENETRABLE);
+		try {
+			this.getSprite().loadImage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

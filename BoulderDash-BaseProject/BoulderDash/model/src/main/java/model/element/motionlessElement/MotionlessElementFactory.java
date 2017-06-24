@@ -1,19 +1,14 @@
 package model.element.motionlessElement;
 
 import common.Permeability;
-import common.Sprite;
 import model.element.Element;
-import java.io.IOException;
 
 public class MotionlessElementFactory extends Element {
 	
-	public MotionlessElementFactory(int x, int y, Sprite sprite, Permeability permeability) {
-		super(x, y, sprite, permeability);
-		// TODO Auto-generated constructor stub
-	}
-	
-			
 
+			public MotionlessElementFactory(Character character, String name, Permeability permeability) {
+		super(character, name, permeability);
+	}
 
 			private static Wall wall = new Wall();
 			private static UnbreakableWall unbreakableWall = new UnbreakableWall();

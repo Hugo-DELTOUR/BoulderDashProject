@@ -1,11 +1,7 @@
 package model.element.motionlessElement;
-import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
-
 import common.Permeability;
-import common.Sprite;
 
 public class Air extends MotionlessElement {
 
@@ -15,9 +11,13 @@ public class Air extends MotionlessElement {
 	final static int cols = 5;
 	
 	
-	public Air() throws IOException {
+	public Air()  {
 		super(' ', "74359.png" , Permeability.PENETRABLE);
-		this.getSprite().loadImage();
+		try {
+			this.getSprite().loadImage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

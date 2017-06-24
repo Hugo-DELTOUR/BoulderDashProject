@@ -2,15 +2,14 @@ package model.element.mobileElement;
 
 import java.io.IOException;
 
-import javax.swing.text.Position;
-
 import common.Permeability;
 import common.Sprite;
 import common.UserOrder;
-import model.IMap;
 
 public class EnnemyDiamonds extends Ennemy  {
 	
+
+
 	private static Sprite spriteAnim1;
 	private static Sprite spriteAnim2;
 	private static Sprite spriteAnim3;
@@ -18,14 +17,15 @@ public class EnnemyDiamonds extends Ennemy  {
 	private UserOrder direction;
 	
 	
-	public EnnemyDiamonds(int x, int y, IMap map) throws IOException{
-		super(x,y, spriteAnim2, map);
+	public EnnemyDiamonds(int x, int y, Character character, String name, Permeability permeability)
+			throws IOException {
+		super(x, y, character, name, permeability);
 		spriteAnim1.loadImage();
 		spriteAnim2.loadImage();
 		spriteAnim3.loadImage();
 		spriteAnim4.loadImage();
-		
 	}
+
 	
 	
 	public void loot(){

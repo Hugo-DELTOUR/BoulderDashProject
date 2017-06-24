@@ -1,11 +1,8 @@
 package model.element.motionlessElement;
 
-import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
-
-import common.Sprite;
+import common.Permeability;
 
 public class SpecialStoneBlock extends MotionlessElement{
 
@@ -15,10 +12,14 @@ public class SpecialStoneBlock extends MotionlessElement{
 	final static int cols = 5;
 	
 	
-	public SpecialStoneBlock() throws IOException {
-		super(new Sprite(' ', ImageIO.read(new File("ress/74359.png")).getSubimage(cols * width, rows *height ,width,height)), common.Permeability.BLOCKING);		
+	public SpecialStoneBlock()  {
+		super(' ', "74359.png" , Permeability.PENETRABLE);
+		try {
+			this.getSprite().loadImage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-
 
 	
 }

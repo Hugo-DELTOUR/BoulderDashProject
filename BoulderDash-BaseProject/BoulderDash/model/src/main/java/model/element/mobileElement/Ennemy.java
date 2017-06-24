@@ -1,17 +1,14 @@
 package model.element.mobileElement;
 
-import java.io.File;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.swing.text.Position;
 
 import common.Permeability;
 import common.Sprite;
 import common.UserOrder;
-import model.IMap;
 
 public class Ennemy extends Mobile {
+
+
 
 	private static Sprite spriteAnim1;
 	private static Sprite spriteAnim2;
@@ -23,12 +20,22 @@ public class Ennemy extends Mobile {
 	final static int rows = 5;
 	final static int cols = 5;
 	private UserOrder direction;
+
 	
-	public Ennemy(int x, int y, Sprite sprite, IMap map) throws IOException{
-		super(x,y, new Sprite('@', ImageIO.read(new File("ress/74359.png")).getSubimage(cols * width, rows *height ,width,height)), map, Permeability.BLOCKING);
-		this.setX(x);
-		this.setY(y);
-	}
+	public Ennemy(int x, int y, Character character, String name, Permeability permeability) throws IOException {
+		super(x, y, character, name, permeability);
+		spriteAnim1.loadImage();
+		spriteAnim2.loadImage();
+		spriteAnim3.loadImage();
+		spriteAnim4.loadImage();
+		spriteExplode.loadImage();	} // It may be wrong !!!!
+	
+	
+//	public Ennemy(int x, int y, Sprite sprite, IMap map) throws IOException{
+//		super(x,y, new Sprite('@', ImageIO.read(new File("ress/74359.png")).getSubimage(cols * width, rows *height ,width,height)), map, Permeability.BLOCKING);
+//		this.setX(x);
+//		this.setY(y);
+//	}
 	
 	
 	public void doNothing(){
