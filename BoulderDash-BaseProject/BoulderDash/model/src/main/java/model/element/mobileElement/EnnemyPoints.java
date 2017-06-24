@@ -1,8 +1,10 @@
 package model.element.mobileElement;
 
 import java.awt.Point;
+import java.io.IOException;
 
 import common.Sprite;
+import common.UserOrder;
 import model.IMap;
 
 public class EnnemyPoints extends Ennemy{
@@ -11,14 +13,15 @@ public class EnnemyPoints extends Ennemy{
 	private static Sprite spriteAnim2;
 	private static Sprite spriteAnim3;
 	private static Sprite spriteAnim4;
+	private UserOrder direction;
 	
 	
-	public EnnemyPoints(int x, int y, IMap map){
+	public EnnemyPoints(int x, int y, IMap map) throws IOException{
 		super(x,y, spriteAnim2, map);
-		spriteAnim1.getImage();
-		spriteAnim2.getImage();
-		spriteAnim3.getImage();
-		spriteAnim4.getImage();
+		spriteAnim1.loadImage();
+		spriteAnim2.loadImage();
+		spriteAnim3.loadImage();
+		spriteAnim4.loadImage();
 
 	}
 	
@@ -28,48 +31,49 @@ public class EnnemyPoints extends Ennemy{
 	}
 	
 	public void doNothing(){
-		this.setMobileHasChanged();
+		this.getMap().setMobileHasChanged();
 	}
 	
 	public void die(){
 		this.setAlive(false);
-        this.setMobileHasChanged();
+		this.getMap().setMobileHasChanged();
 	}
 	
 	public void moveDown(){
 		 this.setY(this.getY() + 1);
-	     this.setMobileHasChanged();
+		 this.getMap().setMobileHasChanged();
 		 this.setSprite(spriteAnim2);
 
 	}
 	
 	public void moveLeft(){
 		this.setX(this.getX() - 1);
-        this.setMobileHasChanged();
+		this.getMap().setMobileHasChanged();
 	    this.setSprite(spriteAnim3);
 
 	}
 	
 	public void moveRight(){
 		 this.setX(this.getX() + 1);
-	     this.setMobileHasChanged();
+		 this.getMap().setMobileHasChanged();
 		 this.setSprite(spriteAnim4);
 
 	}
 	
 	public void moveUp(){
 		this.setY(this.getY() - 1);
-        this.setMobileHasChanged();
+		this.getMap().setMobileHasChanged();
 	    this.setSprite(spriteAnim1);
 
 	}
 	
-	public void direction(){
-		
+	public UserOrder getDirection() {
+		return direction;
 	}
-	
-	public Point position(){
 
+
+	public void setDirection(UserOrder direction) {
+		this.direction = direction;
 	}
 	
 }

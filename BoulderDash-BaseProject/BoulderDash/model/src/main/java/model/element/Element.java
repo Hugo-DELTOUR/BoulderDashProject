@@ -1,6 +1,8 @@
 package model.element;
 
+import java.awt.Image;
 import java.awt.Point;
+import java.io.IOException;
 
 import common.Permeability;
 import common.Sprite;
@@ -12,12 +14,11 @@ public class Element extends BoulderDashModel implements IElement{
 	protected Point position;
 	protected Sprite sprite;
 	private Permeability permeability;
+	private Image image;
 	
-    public Element(int x, int y , final Sprite sprite, final Permeability permeability) {
-        this.setSprite(sprite);
+	public Element(final Character character, final String name , final Permeability permeability) {
+		this.sprite = new Sprite(character, name );
         this.setPermeability(permeability);
-        this.setX(x);
-        this.setY(y);	
     }
 
 	public Sprite getSprite() {
@@ -34,7 +35,7 @@ public class Element extends BoulderDashModel implements IElement{
 	}
 
 	@Override
-	public void getImage() {
+	public Image getImage() {
 		return this.image;		
 	}
 	

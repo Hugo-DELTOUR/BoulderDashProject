@@ -1,6 +1,10 @@
 package Shared;
 
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Sprite {
 	
@@ -49,8 +53,8 @@ public class Sprite {
 		return true;
 	}
 	
-	public void loadedImage(){
-		
+	public final void loadImage() throws IOException {
+	        this.setImage(ImageIO.read(new File("ress/" + this.getImageName())));
 	}
 	
 	

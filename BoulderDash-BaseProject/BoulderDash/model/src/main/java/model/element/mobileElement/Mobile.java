@@ -1,25 +1,21 @@
 package model.element.mobileElement;
 
+import java.awt.Image;
 import java.awt.Point;
-import java.util.Observable;
-
-import javax.swing.text.Position;
-
 import common.Permeability;
 import common.Sprite;
-import model.IElement;
 import model.IMap;
 import model.IMobile;
-import model.Map;
 import model.element.Element;
 
-public class Mobile extends Element  implements IMobile, IMap{
+public class Mobile extends Element  implements IMobile{
 
 
 	private Boolean alive;
 	private IMap map;
-	private Point position;
 	private char consoleImage;
+	private Image image;
+
 	
 	public char getConsoleImage() {
 		return consoleImage;
@@ -37,7 +33,7 @@ public class Mobile extends Element  implements IMobile, IMap{
 	}
 	
 	public void doNothing(){
-		this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
 	}
 	
 	public Boolean isAlive(){
@@ -50,7 +46,7 @@ public class Mobile extends Element  implements IMobile, IMap{
 	
 	public void die(){
 		this.alive = false;
-        this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
 	}
 	
 	public Boolean isCrashed(){
@@ -59,49 +55,35 @@ public class Mobile extends Element  implements IMobile, IMap{
 	
 	public void moveUp(){
         this.setY(this.getY() - 1);
-        this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
 	}
 	
 	public void moveDown(){
         this.setY(this.getY() + 1);
-        this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
 	}
 	
 	public void moveLeft(){
         this.setX(this.getX() - 1);
-        this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
 	}
 	
 	public void moveRight(){
         this.setX(this.getX() + 1);
-        this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
 	}
 	
-	public Mobile (Sprite sprite, IMap map, Permeability permeability){
-        super(sprite, permeability);
-        this.setMap(map);
-        this.position = new Point();
-	}
-	
-	public Mobile (int x, int y, Sprite sprite, IMap map, Permeability permeability){
-        this(sprite, map, permeability);
+    public Mobile(int x, int y , final Character character, final String name , final Permeability permeability) {
+        super(character, name, permeability);
         this.setX(x);
-        this.setY(y);
-        
-	}
+        this.setY(y);	
+    }
+	
 	@Override
-	public void getImage() {
+	public Image getImage() {
 		return this.image;		
 	}
-	@Override
-	public int getWidth() {
-        return this.width;
-
-	}
-	@Override
-	public int getHeight() {
-        return this.height;
-	}
 	
+
 	
 }

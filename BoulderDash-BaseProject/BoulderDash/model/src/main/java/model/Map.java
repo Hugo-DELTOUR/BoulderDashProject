@@ -5,7 +5,7 @@ import model.BoulderDashModel;
 import model.element.mobileElement.Rockford;
 import model.BoulderDashModel;
 
-public class Map extends Observable  {
+public class Map extends Observable implements IMap  {
 
 	private int width;
 	private int height;
@@ -36,15 +36,24 @@ public class Map extends Observable  {
 	}
 	
 	public void loadFile (String fileName,  final int RockfordStartX, final int RockfordStartY){
-		this.setMap(new Map(fileName));
-		this.setRockford(new Rockford(RockfordStartX, RockfordStartY ) this.getMap);
-	}
-	
-	public void setMobileAsChanged(){
-		this.getMap().setMobileHasChanged();
+		
+		//TODO Use Cad and table[][], make a switch case and instantiate each objet
 	}
 	
 	public Observable getObservable(){
 		return this;
 	}
+	
+//	@Override
+//	public IElement getOnTheMapXY(int x, int y) {
+//		return this.onTheRoad[x][y];
+//
+//	}
+	
+	@Override
+	public void setMobileHasChanged() {
+		this.setChanged();
+        this.notifyObservers();		
+	}
+	
 }

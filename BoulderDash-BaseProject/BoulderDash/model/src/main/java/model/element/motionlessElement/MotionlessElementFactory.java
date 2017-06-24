@@ -3,6 +3,7 @@ package model.element.motionlessElement;
 import common.Permeability;
 import common.Sprite;
 import model.element.Element;
+import java.io.IOException;
 
 public class MotionlessElementFactory extends Element {
 	
@@ -10,15 +11,24 @@ public class MotionlessElementFactory extends Element {
 		super(x, y, sprite, permeability);
 		// TODO Auto-generated constructor stub
 	}
-
-	private static Wall wall = new Wall();
-	private static UnbreakableWall unbreakableWall = new UnbreakableWall();
-	private static Dirt dirt = new Dirt();
-	private static Air air = new Air();
-	private static Door door = new Door();
-	private static SpecialStoneBlock specialStoneBlock = new SpecialStoneBlock();
-	private static MotionlessElement[] motionlessElement = {wall,unbreakableWall,dirt,air,door,specialStoneBlock};
+	
 			
+
+
+			private static Wall wall = new Wall();
+			private static UnbreakableWall unbreakableWall = new UnbreakableWall();
+			private static Dirt dirt = new Dirt();
+			private static Air air = new Air();
+			private static Door door = new Door();
+			private static SpecialStoneBlock specialStoneBlock = new SpecialStoneBlock();
+			private static MotionlessElement[] motionlessElement = {wall,unbreakableWall,dirt,air,door,specialStoneBlock};
+
+
+	
+	
+	
+	
+	
 	
 	public static MotionlessElement createWall(){
 		return wall;
