@@ -1,6 +1,6 @@
 package model.element.mobileElement;
 
-import javax.swing.text.Position;
+import java.awt.Point;
 
 import common.Permeability;
 import common.Sprite;
@@ -8,7 +8,7 @@ import model.IMap;
 
 public class Ennemy extends Mobile {
 
-	public static final Sprite sprite = new Sprite('@', /*TODO*/);
+	public static final Sprite sprite = new Sprite('@', null);
 	private static Sprite spriteAnim1;
 	private static Sprite spriteAnim2;
 	private static Sprite spriteAnim3;
@@ -63,7 +63,8 @@ public class Ennemy extends Mobile {
 		
 	}
 	
-	public Position position(){
+	public Point position(){
+		return null;
 		
 	}
 

@@ -1,15 +1,15 @@
 package model.element.motionlessElement;
 
+import common.Permeability;
 import common.Sprite;
-import fr.exia.insanevehicles.shared.Permeability;
 
 public class SpecialStoneBlock extends MotionlessElement{
 
-	public static final Sprite sprite = new Sprite('W', /*TODO*/);
+	public static final Sprite sprite = new Sprite('W', null);
 	
-	public SpecialStoneBlock(Sprite sprite, common.Permeability permeability) {
-		super(sprite, permeability);
-		// TODO Auto-generated constructor stub
+	public SpecialStoneBlock() {
+		super(sprite, Permeability.BLOCKING);
+
 	}
 
 

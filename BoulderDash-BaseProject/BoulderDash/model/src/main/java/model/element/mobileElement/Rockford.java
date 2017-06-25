@@ -6,7 +6,7 @@ import common.Permeability;
 
 public class Rockford extends Mobile {
 
-	public static final Sprite sprite = new Sprite('R', /*TODO*/);
+	public static final Sprite sprite = new Sprite('R', null);
 	private static Sprite spriteGoLeft;
 	private static Sprite spriteGoRight;
 	private static Sprite spriteGoUp;

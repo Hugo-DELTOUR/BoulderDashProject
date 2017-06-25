@@ -126,6 +126,11 @@ public class BoulderDashControllerTest {
 
 		}
 
+		@Override
+		public void setOrderPerformer(IOrderPerformer orderPerformer) {
+			
+		}
+
 	}
 
 	// TODO Erase this function when real one is disponible
@@ -140,6 +145,11 @@ public class BoulderDashControllerTest {
 		@Override
 		public IMobile getRockford() {
 			return null;
+		}
+
+		@Override
+		public void updateModel() {
+			
 		}
 
 	}

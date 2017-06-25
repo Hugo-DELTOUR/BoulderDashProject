@@ -1,16 +1,14 @@
 package model.element.mobileElement;
 
+import java.awt.Image;
 import java.awt.Point;
 import java.util.Observable;
-
-import javax.swing.text.Position;
 
 import common.Permeability;
 import common.Sprite;
 import model.IElement;
 import model.IMap;
 import model.IMobile;
-import model.Map;
 import model.element.Element;
 
 public class Mobile extends Element  implements IMobile, IMap{
@@ -18,8 +16,10 @@ public class Mobile extends Element  implements IMobile, IMap{
 
 	private Boolean alive;
 	private IMap map;
-	private Point position;
+//	private Point position;
 	private char consoleImage;
+	private int width;
+	private int height;
 	
 	public char getConsoleImage() {
 		return consoleImage;
@@ -54,7 +54,8 @@ public class Mobile extends Element  implements IMobile, IMap{
 	}
 	
 	public Boolean isCrashed(){
-		return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
+		return null;
+//		return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
 	}
 	
 	public void moveUp(){
@@ -90,8 +91,9 @@ public class Mobile extends Element  implements IMobile, IMap{
         
 	}
 	@Override
-	public void getImage() {
-		return this.image;		
+	public Image getImage() {
+//		return this.image;	
+		return null;
 	}
 	@Override
 	public int getWidth() {
@@ -101,6 +103,22 @@ public class Mobile extends Element  implements IMobile, IMap{
 	@Override
 	public int getHeight() {
         return this.height;
+	}
+
+
+	@Override
+	public IElement getOnTheRoad(int x, int y) {
+				return null;
+	}
+
+	@Override
+	public void setMobileHasChanged() {
+				
+	}
+
+	@Override
+	public Observable getObservable() {
+		return null;
 	}
 	
 	

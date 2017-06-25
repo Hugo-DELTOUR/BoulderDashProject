@@ -12,7 +12,7 @@ public class Rock extends Mobile {
 	private static Sprite spriteAnim2;
 	private static Sprite spriteAnim3;
 	private static Sprite spriteAnim4;
-	public static final Sprite sprite = new Sprite('O', /*TODO*/);
+	public static final Sprite sprite = new Sprite('O', null);
 	
 	
 	

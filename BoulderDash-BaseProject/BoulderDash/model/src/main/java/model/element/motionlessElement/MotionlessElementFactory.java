@@ -8,7 +8,6 @@ public class MotionlessElementFactory extends Element {
 	
 	public MotionlessElementFactory(int x, int y, Sprite sprite, Permeability permeability) {
 		super(x, y, sprite, permeability);
-		// TODO Auto-generated constructor stub
 	}
 
 	private static Wall wall = new Wall();

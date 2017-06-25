@@ -57,7 +57,7 @@ public class EnnemyTest {
 		fail("Not yet implemented");
 	}
 	@Test
-	public Position testPosition() {
+	public void testPosition() {
 		fail("Not yet implemented");
 	}
 }

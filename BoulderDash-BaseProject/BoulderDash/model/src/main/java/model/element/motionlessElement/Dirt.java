@@ -7,10 +7,9 @@ public class Dirt extends MotionlessElement{
 	
 	
 
-	public static final Sprite sprite = new Sprite('+', /*TODO*/);
+	public static final Sprite sprite = new Sprite('+', null);
 
-	public Dirt(Sprite sprite, Permeability permeability) {
-		super(sprite, permeability);
-		// TODO Auto-generated constructor stub
+	public Dirt() {
+		super(sprite, Permeability.PENETRABLE);
 	}
 }

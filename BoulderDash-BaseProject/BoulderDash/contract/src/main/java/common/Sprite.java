@@ -44,6 +44,10 @@ public class Sprite {
 	public void setImageLoaded(Boolean imageLoaded) {
 		this.imageLoaded = imageLoaded;
 	}
+
+	public boolean getImageLoaded(){
+		return this.imageLoaded;
+	}
 	
 	public Boolean isNameLoaded(){
 		return true;

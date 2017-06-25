@@ -1,9 +1,6 @@
 package model;
 
 import java.util.Observable;
-import model.BoulderDashModel;
-import model.element.mobileElement.Rockford;
-import model.BoulderDashModel;
 
 public class Map extends Observable  {
 
@@ -36,12 +33,12 @@ public class Map extends Observable  {
 	}
 	
 	public void loadFile (String fileName,  final int RockfordStartX, final int RockfordStartY){
-		this.setMap(new Map(fileName));
-		this.setRockford(new Rockford(RockfordStartX, RockfordStartY ) this.getMap);
+//		this.setMap(new Map(fileName));
+//		this.setRockford(new Rockford(RockfordStartX, RockfordStartY ) this.getMap);
 	}
 	
 	public void setMobileAsChanged(){
-		this.getMap().setMobileHasChanged();
+//		this.getMap().setMobileHasChanged();
 	}
 	
 	public Observable getObservable(){

@@ -67,9 +67,9 @@ public class EnnemyPoints extends Ennemy{
 	public void direction(){
 		
 	}
-	
+	@Override
 	public Point position(){
-
+		return null;
 	}
 	
 }

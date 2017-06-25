@@ -1,9 +1,11 @@
 package model;
 
-public class BoulderDashModel {
+public class BoulderDashModel implements IBoulderDashModel {
 	private IMap map;
 	private IMobile Rockford;
 	
+	public BoulderDashModel(int mapcharged, int startx, int starty) {
+	}
 	public IMap getMap() {
 		return map;
 	}
@@ -15,6 +17,10 @@ public class BoulderDashModel {
 	}
 	public void setRockford(IMobile rockford) {
 		Rockford = rockford;
+	}
+	@Override
+	public void updateModel() {
+		
 	}
 	
 }
