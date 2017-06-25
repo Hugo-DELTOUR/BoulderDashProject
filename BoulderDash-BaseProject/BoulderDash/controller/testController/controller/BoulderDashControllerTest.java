@@ -32,11 +32,11 @@ public class BoulderDashControllerTest {
 
 	@Before
 	public void setUp() throws Exception {
-		//Instantiation of the TestView and TestModel
+		// Instantiation of the TestView and TestModel
 		// TODO Erase these functions and replace with real one
 		testView = new BouchonIBoulderDashView();
 		testModel = new BouchonIBoulderDashModel();
-		
+
 	}
 
 	@After
@@ -92,6 +92,7 @@ public class BoulderDashControllerTest {
 
 	/**
 	 * OrderPerform function test (Exceptions handled)
+	 * 
 	 * @throws IOException
 	 */
 	@Test
@@ -102,14 +103,15 @@ public class BoulderDashControllerTest {
 		ctrl.orderPerform(UserOrder.DOWN);
 		assertEquals(expected, ctrl.getStackOrder());
 	}
-	
+
 	/**
-	 * Temporary creation of classes from Interfaces
-	 * until I got the real classes from my mates
+	 * Temporary creation of classes from Interfaces until I got the real
+	 * classes from my mates
+	 * 
 	 * @author Robin
 	 *
 	 */
-	
+
 	// TODO Erase this function when real one is disponible
 	@Deprecated
 	public static class BouchonIBoulderDashView implements IBoulderDashView {
