@@ -15,21 +15,10 @@ public class Sprite {
 	private char consoleImage;
 	private Boolean imageLoaded;
 	
-<<<<<<< HEAD
-
 	public Sprite(Character character, String name) {
 		this.consoleImage = character;
 		this.imageName = name;
-=======
-	public Sprite(char character){
-		
-	}
-	
 
-	public Sprite(char character, BufferedImage bufferedImage){
-
-		
->>>>>>> ff65aa76b54dbeaba7073405a29b6112fc629870
 	}
 
 	public Image getImage() {

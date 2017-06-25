@@ -1,11 +1,15 @@
 package model;
 
+import java.io.IOException;
 import java.util.Observable;
 import model.BoulderDashModel;
 import model.element.mobileElement.Rockford;
+import model.element.motionlessElement.MotionlessElement;
+import model.element.motionlessElement.MotionlessElementFactory;
 
-public class Map extends Observable implements IMap  {
+public class Map extends Observable implements IMap, ICAD  {
 
+	private static final Object[][] SpriteMap = null;
 	private int width;
 	private int height;
 	private IElement[][] onTheMap;
@@ -45,10 +49,11 @@ public class Map extends Observable implements IMap  {
 		this.onTheMap = onTheMap;
 		/** 
 		 * This is the setter of the variable "onTheMap".
+		 * @throws Exception 
 		 */
 	}
 	
-	public Map (String fileName){  
+	public Map (String fileName) throws Exception{  
 		super();
         this.loadFile(fileName ,1,1);
         
@@ -59,10 +64,59 @@ public class Map extends Observable implements IMap  {
 		 */
 	}
 	
-	public void loadFile (String fileName,  final int RockfordStartX, final int RockfordStartY){
-		
-		//TODO Use Cad and table[][], make a switch case and instantiate each objet
+	public void loadFile (String fileName,  final int RockfordStartX, final int RockfordStartY) throws Exception{
+
+		Connect();
+		char tableMap[][]= this.getMapSQL("MAP1", 1);
+		MotionlessElement SpriteMap[40][20];
+		for (int y=0; y<20; y++){
+			for (int x=0; x<40; x++){
+				 switch (tableMap[x][y]) {
+		            case 1:  tableMap[x][y] = 'H';
+		            		 spriteMap[x][y] = createWall();
+		                     break;
+		            case 2:  tableMap[x][y] = 'X';
+		            		 spriteMap[x][y] = createDiamond();
+		                     break;
+		            case 3:  tableMap[x][y] = '#';
+		            		 spriteMap[x][y] = createUnbreakableWall();
+
+		                     break;
+		            case 4:  tableMap[x][y] = '°';
+		            		 spriteMap[x][y] = createRock();
+
+		                     break;
+		            case 5:  tableMap[x][y] = '@';
+		            		 spriteMap[x][y] = createEnnemy();
+
+		                     break;
+		            case 6:  tableMap[x][y] = '+';
+		             		 spriteMap[x][y] = createDirt();
+
+		                     break;
+		            case 7:  tableMap[x][y] = 'E';
+			           		 spriteMap[x][y] = createDoor();
+
+		                     break;
+		            case 8:  tableMap[x][y] = 'W';
+		            		 spriteMap[x][y] = createSpecialWall();
+
+		                     break;
+		            case 9:  tableMap[x][y] = ' ';
+		            		 spriteMap[x][y] = createAir();
+
+		            		 break;
+		            default: tableMap[x][y] = ' ';
+           		 			 spriteMap[x][y] = createAir();
+		                     break;
+			}
+		}
 	}
+		
+		/**
+		 * This method transforms each character of the tableMap array into sprite in the spriteMap array.
+		 */
+}
 	
 	public Observable getObservable(){
 		return this;

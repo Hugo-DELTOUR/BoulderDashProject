@@ -21,8 +21,8 @@ public class MotionlessElementFactory extends Element {
 
 			/**
 			 * This is the Factory from the Dp factory.
-			 * It Define an interface for creating an object, 
-			 * but let subclasses decide which class to instantiate. 
+			 * It Defines an interface for creating an object, 
+			 * but lets subclasses decide which class to instantiate. 
 			 * The Factory method lets a class defer instantiation it uses to subclasses.
 			 */
 	
@@ -35,21 +35,21 @@ public class MotionlessElementFactory extends Element {
 		
 		/**
 		 * This is the factory from the wall.
-		 * It allow the the user to create a wall with the method "createWall". 
+		 * It allows the the user to create a wall with the method "createWall". 
 		 */
 	}
 	public static MotionlessElement createUnbreakable(){
 		return unbreakableWall;
 		/**
 		 * This is the factory from the unbreakableWall.
-		 * It allow the the user to create a wall with the method "createUnbreakable". 
+		 * It allowsthe the user to create a wall with the method "createUnbreakable". 
 		 */
 	}
 	public static MotionlessElement createDirt(){
 		return dirt;
 		/**
 		 * This is the factory from the dirt.
-		 * It allow the the user to create a wall with the method "createDirt". 
+		 * It allows the the user to create a wall with the method "createDirt". 
 		 */
 	}
 	public static MotionlessElement createAir(){
@@ -57,21 +57,21 @@ public class MotionlessElementFactory extends Element {
 		
 		/**
 		 * This is the factory from the air.
-		 * It allow the the user to create a wall with the method "createAir". 
+		 * It allows the the user to create a wall with the method "createAir". 
 		 */
 	}
 	public static MotionlessElement createDoor(){
 		return door;
 		/**
 		 * This is the factory from the wall.
-		 * It allow the the user to create a wall with the method "createWall". 
+		 * It allows the the user to create a wall with the method "createWall". 
 		 */
 	}
 	public static MotionlessElement createSpecialStoneBlock(){
 		return specialStoneBlock;
 		/**
 		 * This is the factory from the wall.
-		 * It allow the the user to create a wall with the method "createWall". 
+		 * It allows the the user to create a wall with the method "createWall". 
 		 */
 	}
 	
@@ -84,7 +84,7 @@ public class MotionlessElementFactory extends Element {
 	        return air;
 	        
 	        /**
-			 * This method allow the user to identify a motionless element with his symbol.
+			 * This method allows the user to identify a motionless element with his symbol.
 			 */
 	        
 	 }

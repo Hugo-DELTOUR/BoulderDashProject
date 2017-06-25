@@ -15,20 +15,24 @@ public class EnnemyDiamonds extends Ennemy  {
 	private static Sprite spriteAnim3;
 	private static Sprite spriteAnim4;
 	private UserOrder direction;
+	final static int height = 16;
+	final static int width = 16;
+	final static int cols = 10;
+
 	
 	
 	public EnnemyDiamonds(int x, int y, Character character, String name, Permeability permeability)
 			throws IOException {
 		super(x, y, character, name, permeability);
-		spriteAnim1.loadImage();
-		spriteAnim2.loadImage();
-		spriteAnim3.loadImage();
-		spriteAnim4.loadImage();
+		spriteAnim1.loadImage();//.getSubimage(0 * width, cols * height, width, height);
+		spriteAnim2.loadImage();//.getSubimage(1 * width, cols * height, width, height);
+		spriteAnim3.loadImage();//.getSubimage(2 * width, cols * height, width, height);
+		spriteAnim4.loadImage();//.getSubimage(3 * width, cols * height, width, height);
 		
 		
 		/**
 		 * This is the constructor from "EnnemyDiamonds".
-		 * It define this as two int "x" and "y", as a character, as a name and as a permeability.
+		 * It defines this as two int "x" and "y", as a character, as a name and as a permeability.
 		 * Moreover it load the differents sprites for the EnnemyDiamonds.
 		 */
 	}
@@ -45,7 +49,7 @@ public class EnnemyDiamonds extends Ennemy  {
 		this.getMap().setMobileHasChanged();
 	    
 		/** 
-		 * This method notify the map that the EnnemyDiamonds is not moving.
+		 * This method notifies the map that the EnnemyDiamonds is not moving.
 		 */
 
 	}
@@ -55,7 +59,7 @@ public class EnnemyDiamonds extends Ennemy  {
 		this.getMap().setMobileHasChanged();
 		
 		/** 
-		 * This method set the variable "alive" to false and notify the map of the changement.
+		 * This method sets the variable "alive" to false and notifies the map of the changement.
 		 */
 		
 	}
@@ -66,7 +70,7 @@ public class EnnemyDiamonds extends Ennemy  {
 		 this.setSprite(spriteAnim2);
 		 
 			/** 
-			 * This method sets increment Y ,
+			 * This method increments Y ,
 			 * changes the sprite and notifies the map of the changement.
 			 */
 
@@ -78,7 +82,7 @@ public class EnnemyDiamonds extends Ennemy  {
 		this.getMap().setMobileHasChanged();
 	    this.setSprite(spriteAnim3);
 		/** 
-		 * This method sets decrement X ,
+		 * This method decrements X ,
 		 * changes the sprite and notifies the map of the changement.
 		 */
 
@@ -90,7 +94,7 @@ public class EnnemyDiamonds extends Ennemy  {
 		 this.getMap().setMobileHasChanged();
 		 this.setSprite(spriteAnim4);
 			/** 
-			 * This method sets increment X ,
+			 * This method increments X ,
 			 * changes the sprite and notifies the map of the changement.
 			 */
 
@@ -103,7 +107,7 @@ public class EnnemyDiamonds extends Ennemy  {
 	    this.setSprite(spriteAnim1);
 
 		/** 
-		 * This method sets decrement Y ,
+		 * This method decrements Y ,
 		 * changes the sprite and notifies the map of the changement.
 		 */
 

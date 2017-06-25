@@ -15,14 +15,20 @@ public class EnnemyPoints extends Ennemy{
 	private static Sprite spriteAnim3;
 	private static Sprite spriteAnim4;
 	private UserOrder direction;
+	final static int cols = 9;
+	final static int height = 16;
+	final static int width = 16;
+
+
+
 	
 	
 	public EnnemyPoints(int x, int y, Character character, String name, Permeability permeability) throws IOException {
 		super(x, y, character, name, permeability);
-		spriteAnim1.loadImage();
-		spriteAnim2.loadImage();
-		spriteAnim3.loadImage();
-		spriteAnim4.loadImage();	
+		spriteAnim1.loadImage();//.getSubimage(0 * width, cols * height, width, height);
+		spriteAnim2.loadImage();//.getSubimage(1 * width, cols * height, width, height);
+		spriteAnim3.loadImage();//.getSubimage(2 * width, cols * height, width, height);
+		spriteAnim4.loadImage();//.getSubimage(3 * width, cols * height, width, height);
 		
 		/**
 		 * This is the constructor from "EnnemyPoints".

@@ -8,7 +8,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MobileTest {
+import common.Permeability;
+import model.IMap;
+
+public class MobileTest extends Mobile{
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -17,59 +20,36 @@ public class MobileTest {
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
+	private Mobile test;
 
 	@Before
 	public void setUp() throws Exception {
+		this.test = new Mobile(0, 0, 'x', "titi", Permeability.PENETRABLE);
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 	
+	
 	@Test
-	public void testMoveUp() {
-		fail("Not yet implemented");
-	}
-	@Test
-	public void testMoveDown() {
-		fail("Not yet implemented");
-	}
-	@Test
-	public void testMoveRight() {
-		fail("Not yet implemented");
-	}
-	@Test
-	public void testMoveLeft() {
-		fail("Not yet implemented");
-	}
-	@Test
-	public void testSetposition() {
-		fail("Not yet implemented");
+	public void testConsoleImage() {
+		char test ='x';
+		assertEquals(test, test.getConsoleImage());
 	}
 	@Test
 	public void testSetX() {
-		fail("Not yet implemented");
-	}
+		int x = 5;
+		assertEquals(x, test.getX() );	}	
 	@Test
 	public void testSetY() {
-		fail("Not yet implemented");
+		int y = 5;
+		assertEquals(y, test.getY() );	}
 	}
 	@Test
-	public void testSetMap() {
-		fail("Not yet implemented");
-	}
-	@Test
+	
 	public void testIsAlive() {
-		fail("Not yet implemented");
-	}
-	@Test
-	public void testDie() {
-		fail("Not yet implemented");
-	}
-	@Test
-	public void testIsCrashed() {
-		fail("Not yet implemented");
-	}
-
+		Boolean alive = true;
+		assertEquals(alive, test.isAlive() );	}
 
 }

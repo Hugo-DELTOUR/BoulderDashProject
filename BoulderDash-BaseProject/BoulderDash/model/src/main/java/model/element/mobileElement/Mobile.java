@@ -14,6 +14,17 @@ public class Mobile extends Element  implements IMobile{
 	private char consoleImage;
 	private Image image;
 
+	public Mobile(int x, int y , final Character character, final String name , final Permeability permeability) {
+		super(character, name, permeability);
+		this.setX(x);
+		this.setY(y);	
+		
+		/**
+		 * This is the constructor from "Diamond".
+		 * It defines this as two int "x" and "y", as a character, as a name and as a permeability.
+		 * Moreover it sets the two coordinates "x" and "y".
+		 */
+	}
 	
 	public char getConsoleImage() {
 		return consoleImage;
@@ -84,7 +95,7 @@ public class Mobile extends Element  implements IMobile{
         this.setY(this.getY() - 1);
         this.getMap().setMobileHasChanged();
 		/** 
-		 * This method set increment X and notify the map of the changement.
+		 * This method increments X and notifies the map of the changement.
 		 */
 	}
 	
@@ -92,7 +103,7 @@ public class Mobile extends Element  implements IMobile{
         this.setY(this.getY() + 1);
         this.getMap().setMobileHasChanged();
 		/** 
-		 * This method set increment Y and notify the map of the changement.
+		 * This method increments Y and notifies the map of the changement.
 		 */
         
 	}
@@ -101,7 +112,7 @@ public class Mobile extends Element  implements IMobile{
         this.setX(this.getX() - 1);
         this.getMap().setMobileHasChanged();
 		/** 
-		 * This method set decrement Y and notify the map of the changement.
+		 * This method decrements Y and notifies the map of the changement.
 		 */
 	}
 	
@@ -109,21 +120,10 @@ public class Mobile extends Element  implements IMobile{
         this.setX(this.getX() + 1);
         this.getMap().setMobileHasChanged();
 		/** 
-		 * This method set increment X and notify the map of the changement.
+		 * This method increments X and notifies the map of the changement.
 		 */
 	}
 	
-    public Mobile(int x, int y , final Character character, final String name , final Permeability permeability) {
-        super(character, name, permeability);
-        this.setX(x);
-        this.setY(y);	
-        
-		/**
-		 * This is the constructor from "Diamond".
-		 * It define this as two int "x" and "y", as a character, as a name and as a permeability.
-		 * Moreover it set the two coordinates "x" and "y".
-		 */
-    }
 	
 	@Override
 	public Image getImage() {

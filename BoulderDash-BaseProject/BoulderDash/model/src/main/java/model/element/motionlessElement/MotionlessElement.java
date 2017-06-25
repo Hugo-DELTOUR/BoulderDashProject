@@ -9,6 +9,6 @@ public class MotionlessElement extends Element {
 	}
 	/**
 	 * This is the constructor from  the "motionlessElement".
-	 * It define a motionlessElement as a char , as a name and a permeability.
+	 * It defines a motionlessElement as a char , as a name and a permeability.
 	 */
 }

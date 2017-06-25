@@ -17,7 +17,7 @@ public class BoulderDashBDDConnector implements ICAD{
 
 	
 	
-		final String url = "jdbc:mysql:////localhost/javapetri?autoReconnect=true&useSSL=false";
+		final String url = "jdbc:mysql:////localhost/BoulderDashProject";
 		final String user = "root";
 		final String passwd = "";
 		Connection connection = null;
@@ -28,7 +28,7 @@ public class BoulderDashBDDConnector implements ICAD{
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 			} catch (ClassNotFoundException e) {
-				System.out.println("Vérifie tes Drivers");
+				System.out.println("Check the Drivers");
 				e.printStackTrace();
 			}
 			System.out.println("Driver OK");
@@ -37,7 +37,7 @@ public class BoulderDashBDDConnector implements ICAD{
 				connection = DriverManager.getConnection(url, user, passwd);
 				statement = connection.createStatement();
 			} catch (SQLException e1) {
-				System.out.println("Vérifie ta connection internet et/ou tes logins");	
+				System.out.println("Check the connection and the login");	
 				e1.printStackTrace();
 			}
 			System.out.println("Connection OK");
@@ -55,17 +55,17 @@ public class BoulderDashBDDConnector implements ICAD{
 			try {
 				connection.close();
 			} catch (SQLException e) {
-				System.out.println("Impossible de fermer, démerde toi");
+				System.out.println("It can't close");
 				e.printStackTrace();
 			}
 			
 			/** 
-			 * This method close the connection to the data base.
+			 * This method closesthe connection to the data base.
 			 */
 		}
 
 		
-		public char[][] getMap (String identifiant, int idMap )  throws IOException{	
+		public char[][] getMapSQL (String identifiant, int idMap )  throws IOException{	
 			Connect();
 			int Width;
 			int Height;
@@ -85,13 +85,13 @@ public class BoulderDashBDDConnector implements ICAD{
 				ligneSQL = statement.executeQuery( "SELECT ligneMap WHERE idMap ==" + idMap + " AND " + "numLigneMap == "+ y + "FROM BaseMap;");
 				tableauDecoupage = ligneSQL.split("");
 				for(int x = 0; x< tableauDecoupage.length; x++){ 
-					tableMap[x][y] = tableauDecoupage[x];						// TODO Refaire ce bloc de requettes avec ligneSql.next()
+					tableMap[x][y] = tableauDecoupage[x];						
 				}
 			}
-
+			return tableMap[][];
 			
 			/** 
-			 * This method read the database and return "tableMap[][]" which represent the map in character.
+			 * This method reads the database and return "tableMap[][]" which represent the map in character.
 			*/
 			
 		}

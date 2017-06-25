@@ -20,7 +20,7 @@ public class Element extends BoulderDashModel implements IElement{
         
 		/** 
 		 * This is the constructor of the "Element".
-		 * It define this as a char, as a name and as a permeability.
+		 * It defines this as a char, as a name and as a permeability.
 		 */
     }
 

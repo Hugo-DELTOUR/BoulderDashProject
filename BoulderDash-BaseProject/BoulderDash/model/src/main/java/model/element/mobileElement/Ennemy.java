@@ -15,30 +15,23 @@ public class Ennemy extends Mobile {
 	private static Sprite spriteAnim3;
 	private static Sprite spriteAnim4;
 	private static Sprite spriteExplode;
-	final static int width = 16;
-	final static int height = 16;
-	final static int rows = 5;
-	final static int cols = 5;
+
+
 	private UserOrder direction;
 
 	
 	public Ennemy(int x, int y, Character character, String name, Permeability permeability) throws IOException {
 		super(x, y, character, name, permeability);
-		spriteAnim1.loadImage();
-		spriteAnim2.loadImage();
-		spriteAnim3.loadImage();
-		spriteAnim4.loadImage();
-		spriteExplode.loadImage();	
-		
+
 	
 		/**
 		 * This is the constructor from "Ennemy".
-		 * It define this as two int "x" and "y", as a character, as a name and as a permeability.
+		 * It defines this as two int "x" and "y", as a character, as a name and as a permeability.
 		 * Moreover it load the differents sprites for the Ennemy.
 		 */
 	
 	
-	} // It may be wrong !!!!
+	} 
 	
 
 	
@@ -46,7 +39,7 @@ public class Ennemy extends Mobile {
 	public void doNothing(){
 		this.getMap().setMobileHasChanged();
 		/** 
-		 * This method notify the map that the Ennemy is not moving.
+		 * This method notifies the map that the Ennemy is not moving.
 		 */
 	}
 	
@@ -56,8 +49,8 @@ public class Ennemy extends Mobile {
 	    this.getMap().setMobileHasChanged();
 	    
 		/** 
-		 * This method set the variable "alive" to false and notify the map of the changement.
-		 * It also change the Sprite of the Ennemy.
+		 * This method sets the variable "alive" to false and notifies the map of the changement.
+		 * It also changes the Sprite of the Ennemy.
 		 */
 	}
 	
@@ -67,7 +60,7 @@ public class Ennemy extends Mobile {
 		 this.setSprite(spriteAnim2);
 		 
 			/** 
-			 * This method sets increment Y ,
+			 * This method increments Y ,
 			 * changes the sprite and notifies the map of the changement.
 			 */
 
@@ -80,7 +73,7 @@ public class Ennemy extends Mobile {
 	    this.setSprite(spriteAnim3);
 	    
 		/** 
-		 * This method sets decrement X ,
+		 * This method decrements X ,
 		 * changes the sprite and notifies the map of the changement.
 		 */
 
@@ -93,7 +86,7 @@ public class Ennemy extends Mobile {
 	    this.setSprite(spriteAnim4);
 	    
 		/** 
-		 * This method sets increment X ,
+		 * This method increments X ,
 		 * changes the sprite and notifies the map of the changement.
 		 */
 
@@ -106,7 +99,7 @@ public class Ennemy extends Mobile {
 	     this.setSprite(spriteAnim1);
 	     
 			/** 
-			 * This method sets decrement Y ,
+			 * This method decrements Y ,
 			 * changes the sprite and notifies the map of the changement.
 			 */
 

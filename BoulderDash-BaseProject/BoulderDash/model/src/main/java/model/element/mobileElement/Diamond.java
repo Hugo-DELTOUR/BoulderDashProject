@@ -14,20 +14,21 @@ public class Diamond extends Mobile {
 	private Sprite spriteAnim4;
 	final static int width = 16;
 	final static int height = 16;
-	final static int rows = 5;
-	final static int cols = 5;
+	final static int cols = 4;
+
+
 		
 	
 	public Diamond(int x, int y, Character character, String name, Permeability permeability) throws IOException {
 		super(x, y, character, name, permeability);
-		spriteAnim1.loadImage();
-		spriteAnim2.loadImage();
-		spriteAnim3.loadImage();
-		spriteAnim4.loadImage();
+		spriteAnim1.loadImage();//.getSubimage(0 * width, cols * height, width, height);
+		spriteAnim2.loadImage();//.getSubimage(1 * width, cols * height, width, height);
+		spriteAnim3.loadImage();//.getSubimage(2 * width, cols * height, width, height);
+		spriteAnim4.loadImage();//.getSubimage(3 * width, cols * height, width, height);
 		
 		/**
 		 * This is the constructor from "Diamond".
-		 * It define this as two int "x" and "y", as a character, as a name and as a permeability.
+		 * It defines this as two int "x" and "y", as a character, as a name and as a permeability.
 		 * Moreover it load the differents sprites for the diamond.
 		 */
 
@@ -59,7 +60,7 @@ public class Diamond extends Mobile {
         this.setSprite(spriteAnim2);
         
 		/** 
-		 * This method sets increment Y ,
+		 * This method increments Y ,
 		 * changes the sprite and notifies the map of the changement.
 		 */
 
@@ -71,7 +72,7 @@ public class Diamond extends Mobile {
 	     this.setSprite(spriteAnim3);
 	     
 			/** 
-			 * This method sets decrement X ,
+			 * This method decrements X ,
 			 * changes the sprite and notifies the map of the changement.
 			 */
 
@@ -84,7 +85,7 @@ public class Diamond extends Mobile {
         this.setSprite(spriteAnim4);
         
 		/** 
-		 * This method sets increment X ,
+		 * This method increments X ,
 		 * changes the sprite and notifies the map of the changement.
 		 */
 

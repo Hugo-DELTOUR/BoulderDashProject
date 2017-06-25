@@ -16,19 +16,20 @@ public class Rock extends Mobile {
 	private static Sprite spriteAnim4;
 	final static int width = 16;
 	final static int height = 16;
-	final static int rows = 5;
-	final static int cols = 5;
+	final static int rows = 0;
+	final static int cols = 3;
+
 	
 	public Rock(int x, int y, Character character, String name, Permeability permeability) throws IOException {
 		super(x, y, character, name, permeability);
-		spriteAnim1.loadImage();
-		spriteAnim2.loadImage();
-		spriteAnim3.loadImage();
-		spriteAnim4.loadImage();
+		spriteAnim1.loadImage();//.getSubimage(rows * width, cols * height, width, height);
+		spriteAnim2.loadImage();//.getSubimage(rows * width, cols * height, width, height);
+		spriteAnim3.loadImage();//.getSubimage(rows * width, cols * height, width, height);
+		spriteAnim4.loadImage();//.getSubimage(rows * width, cols * height, width, height);
 		
 		/**
 		 * This is the constructor from "Rock".
-		 * It define this as two int "x" and "y", as a character, as a name and as a permeability.
+		 * It defines this as two int "x" and "y", as a character, as a name and as a permeability.
 		 * Moreover it load the differents sprites for the rock.
 		 */
 	}
@@ -39,7 +40,7 @@ public class Rock extends Mobile {
 	public void doNothing(){
 		this.getMap().setMobileHasChanged();
 		/** 
-		 * This method notify the map that the Rock is not moving.
+		 * This method notifies the map that the Rock is not moving.
 		 */
 	}
 	
@@ -47,7 +48,7 @@ public class Rock extends Mobile {
 		this.setAlive(false);
 		this.getMap().setMobileHasChanged();
 		/** 
-		 * This method set the variable "alive" to false and notify the map of the changement.
+		 * This method sets the variable "alive" to false and notifies the map of the changement.
 		 */
 		
 	}
@@ -58,8 +59,8 @@ public class Rock extends Mobile {
 		 this.setSprite(spriteAnim2);
 		 
 			/** 
-			 * This method set increment Y, 
-			 * change the sprite and notify the map of the changement.
+			 * This method increments Y, 
+			 * changes the sprite and notifies the map of the changement.
 			 */
 
 	}
@@ -69,8 +70,8 @@ public class Rock extends Mobile {
 		this.getMap().setMobileHasChanged();
 	    this.setSprite(spriteAnim3);
 		/** 
-		 * This method set decrement X, 
-		 * change the sprite and notify the map of the changement.
+		 * This method decrements X, 
+		 * changes the sprite and notifies the map of the changement.
 		 */
 	}
 	
@@ -79,8 +80,8 @@ public class Rock extends Mobile {
 		 this.getMap().setMobileHasChanged();
 		 this.setSprite(spriteAnim4);
 			/** 
-			 * This method set increment X, 
-			 * change the sprite and notify the map of the changement.
+			 * This method increments X, 
+			 * changes the sprite and notifies the map of the changement.
 			 */
 	}
 	

@@ -14,21 +14,20 @@ public class Rockford extends Mobile {
 	private static Sprite spriteExplode;
 	final static int width = 16;
 	final static int height = 16;
-	final static int rows = 5;
-	final static int cols = 5;
+
 	
 	
 	public Rockford(int x, int y, Character character, String name, Permeability permeability) throws IOException {
 		super(x, y, character, name, permeability);
-		spriteGoUp.loadImage();
-		spriteGoDown.loadImage();
-		spriteGoLeft.loadImage();
-		spriteGoRight.loadImage();
-		spriteExplode.loadImage();
+		spriteGoUp.loadImage();//.getSubimage(5 * width, 2 * height, width, height);
+		spriteGoDown.loadImage();//.getSubimage(5 * width, 0 * height, width, height);
+		spriteGoLeft.loadImage();//.getSubimage(1 * width, 0 * height, width, height);
+		spriteGoRight.loadImage();//.getSubimage(3 * width, 2 * height, width, height);
+		spriteExplode.loadImage();//.getSubimage(0 * width, 3 * height, width, height);
 	
 		/**
 		 * This is the constructor from "Rockford".
-		 * It define this as two int "x" and "y", as a character, as a name and as a permeability.
+		 * It defines this as two int "x" and "y", as a character, as a name and as a permeability.
 		 * Moreover it load the differents sprites for rockford.
 		 */
 	
@@ -39,7 +38,7 @@ public class Rockford extends Mobile {
 	public void doNothing(){
 		this.getMap().setMobileHasChanged();
 		/** 
-		 * This method notify the map that Rockford is not moving.
+		 * This method notifies the map that Rockford is not moving.
 		 */
 	}
 	
@@ -48,7 +47,7 @@ public class Rockford extends Mobile {
 		this.getMap().setMobileHasChanged();
 		
 		/** 
-		 * This method set the variable "alive" to false and notify the map of the changement.
+		 * This method sets the variable "alive" to false and notifies the map of the changement.
 		 */
 	}
 	
@@ -58,8 +57,8 @@ public class Rockford extends Mobile {
 		 this.setSprite(spriteGoDown);
 		 
 			/** 
-			 * This method set increment Y, 
-			 * change the sprite and notify the map of the changement.
+			 * This method increments Y, 
+			 * changes the sprite and notifies the map of the changement.
 			 */
 
 	}
@@ -70,8 +69,8 @@ public class Rockford extends Mobile {
 		this.setSprite(spriteGoLeft);
 		
 		/** 
-		 * This method set decrement X, 
-		 * change the sprite and notify the map of the changement.
+		 * This method decrementsX, 
+		 * changes the sprite and notifies the map of the changement.
 		 */
 	}
 	
@@ -81,8 +80,8 @@ public class Rockford extends Mobile {
 		 this.setSprite(spriteGoRight);
 
 			/** 
-			 * This method set increment X, 
-			 * change the sprite and notify the map of the changement.
+			 * This method increments X, 
+			 * changes the sprite and notifies the map of the changement.
 			 */
 	}
 	
@@ -91,8 +90,8 @@ public class Rockford extends Mobile {
 		this.getMap().setMobileHasChanged();
 		this.setSprite(spriteGoUp);
 		/** 
-		 * This method set decrement Y, 
-		 * change the sprite and notify the map of the changement.
+		 * This method decrements Y, 
+		 * changes the sprite and notifies the map of the changement.
 		 */
 
 	}
