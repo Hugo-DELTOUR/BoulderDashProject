@@ -2,8 +2,8 @@ package testView;
 
 import static org.junit.Assert.assertEquals;
 
-import java.awt.Component;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,7 +11,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import fr.exia.showboard.BoardFrame;
+import Shared.IMap;
+import Shared.IMobile;
+import Shared.IOrderPerformer;
+import bouchon.BouchonMap;
+import bouchon.BouchonRockford;
 import view.BoulderDashView;
 
 public class testView {
@@ -25,10 +29,10 @@ public class testView {
 	}
 
 	private BoulderDashView view;
-
+	private IMap map;
 	@Before
 	public void setUp() throws Exception {
-		this.view = new BoulderDashView();
+		this.view = new BoulderDashView(new BouchonMap(), new BouchonRockford());
 	}
 	
 	@After
@@ -36,44 +40,70 @@ public class testView {
 	}
 	
 	@Test
-	public void displayMessage() {
-		String str = "Hello";
-		assertEquals(str,"Hello");
-	}
-	
-	@Test
-	public void show() {
+	public void testDisplayMessage() {
 		
-		assertEquals();
 	}
 	
 	@Test
-	public void keyCodeToUserOrder() {
-		int expected = KeyEvent.VK_RIGHT;
-		BoardFrame instance = new BoardFrame();
-		KeyEvent key = new KeyEvent(instance, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0,  KeyEvent.VK_UP,'Z');
-		assertEquals(expected,key);
+	public void testShow() {
+		
+	}
+	
+	@Test
+	public void testKeyCodeToUserOrder() {
+		int expected = 39;
+		assertEquals(expected,KeyEvent.VK_RIGHT);
 	}
 
 	@Test
-	public void keyTyped() {
+	public void testKeyTyped() {
+	}
+	
+	@Test
+	public void testKeyPressed() {
+		int expected = KeyEvent.VK_RIGHT;
+		assertEquals(expected,39);
+	}
+	
+	@Test
+	public void testKeyReleased() {
+	}
+	
+	@Test
+	public void testFollowRockford() {
 		
-		assertEquals(key,view.getOrderPerformer());
 	}
 	
 	@Test
-	public void keyPressed() {
-		
-		assertEquals(key,view.getOrderPerformer());
+	public void testSetCloseView(){
+		view.setCloseView(null);
+		assertEquals(null, view.getCloseView());
 	}
 	
 	@Test
-	public void keyReleased() {
-		assertEquals();
+	public void testSetView(){
+		view.setView(1);
+		assertEquals("setView",1, view.getView());
 	}
 	
 	@Test
-	public void followRockford() {
-		assertEquals();
+	public void testSetMap() throws IOException{
+		view.setMap(map);
+		assertEquals("setMap", map, view.getMap());
 	}
+	
+	@Test
+	public void testSetRockford(){
+		IMobile rockford = null;
+		view.setRockford(rockford);
+		assertEquals("setRockford", rockford, view.getRockford());
+	}
+	
+	@Test
+	public void testSetOrderPerformer(){
+		IOrderPerformer orderPerformer = null;
+		view.setOrderPerformer(orderPerformer);
+		assertEquals("setOrderPerformer", orderPerformer, view.getOrderPerformer());
+	}
+	
 }

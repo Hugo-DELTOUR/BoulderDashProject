@@ -21,6 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
+import Shared.IBoulderDashController;
 import Shared.IBoulderDashView;
 import Shared.IElement;
 import Shared.IMap;
@@ -28,13 +29,9 @@ import Shared.IMobile;
 import Shared.IOrderPerformer;
 import Shared.Sprite;
 import Shared.UserOrder;
-import bouchon.BouchonMap;
-import bouchon.BouchonRockford;
 import fr.exia.showboard.BoardFrame;
-import fr.exia.showboard.IPawn;
-import fr.exia.showboard.ISquare;
 
-public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener, ActionListener{
+public abstract class BoulderDashView implements IBoulderDashView, Runnable, KeyListener, ActionListener, IBoulderDashController{
 	
 	private int squareSize = 1;
 	private Rectangle closeView;
@@ -42,7 +39,12 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener,
 	private IMap map;
 	private IMobile rockford;
 	private IOrderPerformer orderPerformer;
-	
+	/**
+	 * @param map
+	 * @param rockford
+	 * @throws IOException
+	 * Constructor of the View
+	 */
     public BoulderDashView(IMap map, IMobile rockford) throws IOException {
         this.setMap(map);
         this.setRockford(rockford);
@@ -56,7 +58,9 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener,
 		System.out.print(message);
 	}
 	
-	@Override
+	/**
+	 * Creation of the BoardFrame to display the map
+	 */
     public final void run(){
     	final BoardFrame boardFrame = new BoardFrame("BoulderDash");
     	boardFrame.setDimension(new Dimension(800, 600));
@@ -70,11 +74,11 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener,
     	
     	for(int x = 0; x < this.getMap().getWidth(); x++){
     		for(int y = 0; y < this.getMap().getHeight(); y++){
-    			boardFrame.addSquare((ISquare) this.map.getOnTheMapXY(x, y), x, y);
+    			boardFrame.addSquare(this.map.getOnTheMapXY(x, y), x, y);
     		}
     	}
     	
-    	boardFrame.addPawn((IPawn) this.getRockford());
+    	boardFrame.addPawn(this.getRockford());
     	
     	this.getMap().getObservable().addObserver(boardFrame.getObserver());
     	this.followRockford();
@@ -82,15 +86,19 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener,
     	boardFrame.setVisible(true);
     }
     
+    /**
+     * Print the sprite of the element of the map
+     * @param yStart
+     */
     public void show(int yStart){
     	int y = yStart % this.getMap().getHeight();
     	for(int view = 0; view < this.getView(); view++){
     		for(int x = 0; x < this.getMap().getWidth(); x++){
     			if((x == this.getRockford().getX()) && (y == yStart)){
-    				System.out.print(((IElement)this.getRockford()).getSprite().getConsoleImage());
+    				System.out.print(this.getRockford().getSprite().getConsoleImage());
     			}
     			else{
-    				System.out.print(((IElement)this.getMap().getOnTheMapXY(x, y)).getSprite().getConsoleImage());
+    				System.out.print(this.getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage());
     			}
     		}
     		y = (y+1) % this.getMap().getHeight();
@@ -98,6 +106,11 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener,
     	}
     }
     
+    /**
+     * for each key code the methods return an order to Rockford
+     * @param keyCode
+     * @return
+     */
     public UserOrder keyCodeToUserOrder(int keyCode){
     	UserOrder userOrder;
     	
@@ -135,6 +148,9 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener,
     	
     }
     
+    /**
+     * get the pressed key
+     */
     public void keyPressed(KeyEvent keyEvent){
         this.getOrderPerformer().orderPerformer(keyCodeToUserOrder(keyEvent.getKeyCode()));
     }
@@ -170,7 +186,11 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener,
 	public IMap getMap() {
 		return this.map;
 	}
-	
+	/**
+	 * Methods to set the Map
+	 * @param map
+	 * @throws IOException
+	 */
 	public void setMap(IMap map) throws IOException{
 		this.map = map;
 		for(int x = 0; x < this.getMap().getWidth(); x++){
@@ -197,7 +217,7 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener,
 	public void setOrderPerformer(IOrderPerformer orderPerformer) {
 		this.orderPerformer = orderPerformer;
 	}
-		
+	
 	public void WelcomeScreen() throws IOException{
 			
 			JFrame fen = new JFrame("WelcomeScreen");
@@ -206,7 +226,7 @@ public class BoulderDashView implements IBoulderDashView, Runnable, KeyListener,
 			fen.setSize(600,400);
 			fen.setTitle("BoulderDash");
 			fen.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:\\Users\\delto\\Downloads\\BoulderDashProject-master\\BoulderDashBackground.jpg")))));
-				    	
+			fen.setResizable(false);
 			fen.setLayout(new GridBagLayout());
 	
 			JButton button = new JButton("Play");
