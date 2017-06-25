@@ -1,8 +1,10 @@
 package main;
 
+import controller.BoulderDashController;
 import controller.IBoulderDashController;
+import model.BoulderDashModel;
 import model.IBoulderDashModel;
-import view.IBolderDashView;
+import view.IBoulderDashView;
 
 /**
  * <h1>The Class Main.</h1>
@@ -12,7 +14,6 @@ import view.IBolderDashView;
  */
 public abstract class Main {
 
-	x
 	private static final int mapCharged = 1;
 	private static final int startX;
 	private static final int startY;
@@ -23,7 +24,7 @@ public abstract class Main {
      * @param args
      *            the arguments
      */
-    public static void main(final String[] args) throw Exceptions {
+    public static void main(final String[] args){
         final IBoulderDashModel model = new BoulderDashModel(mapCharged, startX, startY);
         final IBoulderDashView view = new BoulderDashView(model.getMap(), model.getRockford());
     	final IBoulderDashController controller = new BoulderDashController(view, model);
