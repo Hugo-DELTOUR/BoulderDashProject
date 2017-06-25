@@ -1,14 +1,10 @@
 package Shared;
 
 import java.awt.Image;
-import java.awt.Point;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-
-import fr.exia.showboard.IPawn;
-import fr.exia.showboard.ISquare;
 
 public class Sprite {
 	
