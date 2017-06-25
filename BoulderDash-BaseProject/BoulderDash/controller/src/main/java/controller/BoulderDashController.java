@@ -20,7 +20,7 @@ import view.IBoulderDashView;
 public class BoulderDashController implements IBoulderDashController, IOrderPerformer {
 
 	/** The constant speed 
-	 * Game will be in 4Hz, 4 fps
+	 * 	Game will be in 4Hz, 4 fps
 	 */
 	private static final int speed = 250;
 
@@ -30,7 +30,7 @@ public class BoulderDashController implements IBoulderDashController, IOrderPerf
 	/** The model. */
 	private IBoulderDashModel model;
 
-	/** The Stack Order, containing orders */
+	/** The Stack Order, containing user orders */
 	private UserOrder stackOrder;
 
 	/**
@@ -48,12 +48,16 @@ public class BoulderDashController implements IBoulderDashController, IOrderPerf
 		this.clearStackOrder();
 	}
 
+	/**
+	 * Here is a clear constructor, to permit tests to occur without giving any view or model
+	 * 
+	 */
 	public BoulderDashController() {
-
 	}
 
 	/**
 	 * Game loop Start.
+	 *		handle user oders and call updates for movements of other mobile elements
 	 *
 	 * @throws SQLException
 	 *             the SQL exception
@@ -84,7 +88,7 @@ public class BoulderDashController implements IBoulderDashController, IOrderPerf
 				this.getModel().getRockford().doNothing();
 			}
 			this.getView().followRockford();
-			this.getModel().getMap().update();
+			this.getModel().updateModel();
 		}
 		
 //		this.getModel().
