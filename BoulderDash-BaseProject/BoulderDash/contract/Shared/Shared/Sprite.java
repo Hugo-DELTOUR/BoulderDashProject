@@ -13,13 +13,11 @@ public class Sprite {
 	private char consoleImage;
 	private Boolean imageLoaded;
 	
-	public Sprite(char character){
-		
+	public Sprite(Character character, String name){
+		this.consoleImage = character;
+		this.imageName = name;
 	}
 	
-	public Sprite(char character, String imageName){
-		
-	}
 
 	public Image getImage() {
 		return image;
