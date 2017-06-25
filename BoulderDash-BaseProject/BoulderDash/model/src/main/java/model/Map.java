@@ -12,26 +12,51 @@ public class Map extends Observable implements IMap  {
 	
 	public int getWidth() {
 		return width;
+		/** 
+		 * This is the getter of the variable "width".
+		 */
 	}
 	public void setWidth(int width) {
 		this.width = width;
+		/** 
+		 * This is the setter of the variable "width".
+		 */
 	}
 	public int getHeight() {
 		return height;
+		/** 
+		 * This is the getter of the variable "height".
+		 */
 	}
 	public void setHeight(int height) {
 		this.height = height;
+		/** 
+		 * This is the setter of the variable "height".
+		 */
 	}
 	public IElement[][] getOnTheMapXY() {
 		return onTheMap;
+		
+		/** 
+		 * This is the getter of the variable "onTheMap".
+		 */
 	}
 	public void setOnTheMapXY(IElement[][] onTheMap) {
 		this.onTheMap = onTheMap;
+		/** 
+		 * This is the setter of the variable "onTheMap".
+		 */
 	}
 	
 	public Map (String fileName){  
 		super();
         this.loadFile(fileName ,1,1);
+        
+		/** 
+		 * This is the constructor of the map.
+		 * It defines the map as fileName and two coordinates.
+		 * The coordinates are the location where the heroe spawn.
+		 */
 	}
 	
 	public void loadFile (String fileName,  final int RockfordStartX, final int RockfordStartY){
@@ -41,6 +66,7 @@ public class Map extends Observable implements IMap  {
 	
 	public Observable getObservable(){
 		return this;
+		
 	}
 	
 //	@Override
@@ -53,6 +79,10 @@ public class Map extends Observable implements IMap  {
 	public void setMobileHasChanged() {
 		this.setChanged();
         this.notifyObservers();		
+        
+		/** 
+		 * This method allow to notifiy someone that something has changed.
+		 */
 	}
 	
 }

@@ -20,6 +20,10 @@ public class Door extends MotionlessElement {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		/**
+		 * This is the constructor from "Door".
+		 * It define this as a char -> 'E', as a sprite and it also set his permeability to penetrable.
+		 */
 	}
 
 }

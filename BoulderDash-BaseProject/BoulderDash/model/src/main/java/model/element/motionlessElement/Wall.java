@@ -14,11 +14,17 @@ public class Wall extends MotionlessElement {
 	
 	
 	public Wall() {
-		super('H', "74359.png" , Permeability.PENETRABLE);
+		super('H', "74359.png" , Permeability.BLOCKING);
 		try {
 			this.getSprite().loadImage();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		/**
+		 * This is the constructor from "Wall".
+		 * It define this as a char -> 'H', as a sprite and it also set his permeability to blocking.
+		 */
 	}
+	
+	
 }

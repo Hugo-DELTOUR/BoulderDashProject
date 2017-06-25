@@ -13,12 +13,18 @@ public class SpecialStoneBlock extends MotionlessElement{
 	
 	
 	public SpecialStoneBlock()  {
-		super(' ', "74359.png" , Permeability.PENETRABLE);
+		super('W', "74359.png" , Permeability.PENETRABLE);
 		try {
 			this.getSprite().loadImage();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		/**
+		 * This is the constructor from "SpecialStoneBlock".
+		 * It define this as a char -> 'W', as a sprite and it also set his permeability to penetrable
+		 */
+		
 	}
 
 	

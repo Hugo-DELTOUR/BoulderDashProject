@@ -14,12 +14,16 @@ public class UnbreakableWall extends MotionlessElement{
 	
 	
 	public UnbreakableWall()  {
-		super('#', "74359.png" , Permeability.PENETRABLE);
+		super('#', "74359.png" , Permeability.BLOCKING);
 		try {
 			this.getSprite().loadImage();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		/**
+		 * This is the constructor from "UnbreakableWall".
+		 * It define this as a char -> '#', as a sprite and it also set his permeability to blocking.
+		 */
 	}
 	
 }

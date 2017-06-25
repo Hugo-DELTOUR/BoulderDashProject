@@ -21,5 +21,9 @@ public class Dirt extends MotionlessElement{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		/**
+		 * This is the constructor from "Dirt".
+		 * It define this as a char -> '+', as a sprite and it also set his permeability to Penetrable.
+		 */
 	}
 }

@@ -42,7 +42,10 @@ public class BoulderDashBDDConnector implements ICAD{
 			}
 			System.out.println("Connection OK");
 			
-			
+			/** 
+			 * This method connect the program with the data base. 
+			 * It uses a driver, an url (of the data base), a username and a password.
+			 */
 			
 		}
 		
@@ -55,6 +58,10 @@ public class BoulderDashBDDConnector implements ICAD{
 				System.out.println("Impossible de fermer, démerde toi");
 				e.printStackTrace();
 			}
+			
+			/** 
+			 * This method close the connection to the data base.
+			 */
 		}
 
 		
@@ -82,7 +89,12 @@ public class BoulderDashBDDConnector implements ICAD{
 				}
 			}
 
-		
+			
+			/** 
+			 * This method read the database and return "tableMap[][]" which represent the map in character.
+			*/
+			
+		}
 		
 }
 

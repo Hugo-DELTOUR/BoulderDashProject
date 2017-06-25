@@ -23,6 +23,13 @@ public class EnnemyPoints extends Ennemy{
 		spriteAnim2.loadImage();
 		spriteAnim3.loadImage();
 		spriteAnim4.loadImage();	
+		
+		/**
+		 * This is the constructor from "EnnemyPoints".
+		 * It define this as two int "x" and "y", as a character, as a name and as a permeability.
+		 * Moreover it load the differents sprites for the EnnemyPoints.
+		 */
+		
 		}
 	
 	
@@ -32,17 +39,30 @@ public class EnnemyPoints extends Ennemy{
 	
 	public void doNothing(){
 		this.getMap().setMobileHasChanged();
+		/** 
+		 * This method notify the map that the EnnemyPoints is not moving.
+		 */
 	}
 	
 	public void die(){
 		this.setAlive(false);
 		this.getMap().setMobileHasChanged();
+		
+		/** 
+		 * This method set the variable "alive" to false and notify the map of the changement.
+		 */
 	}
 	
 	public void moveDown(){
 		 this.setY(this.getY() + 1);
 		 this.getMap().setMobileHasChanged();
 		 this.setSprite(spriteAnim2);
+		 
+			/** 
+			 * This method sets increment Y ,
+			 * changes the sprite and notifies the map of the changement.
+			 */
+
 
 	}
 	
@@ -50,6 +70,10 @@ public class EnnemyPoints extends Ennemy{
 		this.setX(this.getX() - 1);
 		this.getMap().setMobileHasChanged();
 	    this.setSprite(spriteAnim3);
+		/** 
+		 * This method sets decrement X ,
+		 * changes the sprite and notifies the map of the changement.
+		 */
 
 	}
 	
@@ -57,6 +81,11 @@ public class EnnemyPoints extends Ennemy{
 		 this.setX(this.getX() + 1);
 		 this.getMap().setMobileHasChanged();
 		 this.setSprite(spriteAnim4);
+		 
+			/** 
+			 * This method sets incrementcrement X ,
+			 * changes the sprite and notifies the map of the changement.
+			 */
 
 	}
 	
@@ -64,6 +93,11 @@ public class EnnemyPoints extends Ennemy{
 		this.setY(this.getY() - 1);
 		this.getMap().setMobileHasChanged();
 	    this.setSprite(spriteAnim1);
+	    
+		/** 
+		 * This method sets decrement Y ,
+		 * changes the sprite and notifies the map of the changement.
+		 */
 
 	}
 	

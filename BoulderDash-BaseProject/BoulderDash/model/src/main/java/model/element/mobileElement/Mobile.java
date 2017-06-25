@@ -17,34 +17,63 @@ public class Mobile extends Element  implements IMobile{
 	
 	public char getConsoleImage() {
 		return consoleImage;
+		
+		/** 
+		 * This is the getter of the variable "consoleImage".
+		 */
 	}
 
 	public void setConsoleImage(char consoleImage) {
 		this.consoleImage = consoleImage;
+		
+		/** 
+		 * This is the setter of the variable "consoleImage".
+		 */
 	}
 
 	public IMap getMap() {
 		return map;
+		/** 
+		 * This is the getter of the variable "map".
+		 */
 	}
 	public void setMap(IMap map) {
 		this.map = map;
+		/** 
+		 * This is the setter of the variable "map".
+		 */
 	}
 	
 	public void doNothing(){
         this.getMap().setMobileHasChanged();
+        
+		/** 
+		 * This method notifies the map that the Mobile is not moving.
+		 */
 	}
 	
 	public Boolean isAlive(){
 		return this.alive;
+		/** 
+		 * This is the setter of the variable "alive".
+		 */
 	}
 	
 	public Boolean setAlive(Boolean alive){
 		return this.alive = alive;
+		
+		/** 
+		 * This is the getter of the variable "alive".
+		 */
 	}
 	
 	public void die(){
-		this.alive = false;
+		this.setAlive(false);
         this.getMap().setMobileHasChanged();
+        
+		/** 
+		 * This method sets the variable "alive" to false and notifies the map of the changement.
+		 */
 	}
 	
 	public Boolean isCrashed(){
@@ -54,32 +83,54 @@ public class Mobile extends Element  implements IMobile{
 	public void moveUp(){
         this.setY(this.getY() - 1);
         this.getMap().setMobileHasChanged();
+		/** 
+		 * This method set increment X and notify the map of the changement.
+		 */
 	}
 	
 	public void moveDown(){
         this.setY(this.getY() + 1);
         this.getMap().setMobileHasChanged();
+		/** 
+		 * This method set increment Y and notify the map of the changement.
+		 */
+        
 	}
 	
 	public void moveLeft(){
         this.setX(this.getX() - 1);
         this.getMap().setMobileHasChanged();
+		/** 
+		 * This method set decrement Y and notify the map of the changement.
+		 */
 	}
 	
 	public void moveRight(){
         this.setX(this.getX() + 1);
         this.getMap().setMobileHasChanged();
+		/** 
+		 * This method set increment X and notify the map of the changement.
+		 */
 	}
 	
     public Mobile(int x, int y , final Character character, final String name , final Permeability permeability) {
         super(character, name, permeability);
         this.setX(x);
         this.setY(y);	
+        
+		/**
+		 * This is the constructor from "Diamond".
+		 * It define this as two int "x" and "y", as a character, as a name and as a permeability.
+		 * Moreover it set the two coordinates "x" and "y".
+		 */
     }
 	
 	@Override
 	public Image getImage() {
-		return this.image;		
+		return this.image;	
+		/** 
+		 * This is the getter of the variable "image".
+		 */
 	}
 	
 
