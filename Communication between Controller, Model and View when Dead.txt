@@ -1,6 +1,6 @@
 title Communication between Controller, Model and View when Dead
 
-Controller->Model: \"Is vehicle Alive?"
+Controller->Model: \"Is Rockford Alive?"
 Model->Controller: \"No"
 note left of Controller: clear Stack Order
 Controller->View: \"Display message "Message !!" "

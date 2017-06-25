@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 
+
 public class Sprite {
 	
 	private Image image;
@@ -15,6 +16,7 @@ public class Sprite {
 	private char consoleImage;
 	private Boolean imageLoaded;
 	
+
 	public Sprite(Character character, String name) {
 		this.consoleImage = character;
 		this.imageName = name;

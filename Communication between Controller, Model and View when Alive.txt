@@ -1,6 +1,6 @@
-title Communication between Controller, Model and View when Dead
+title Communication between Controller, Model and View when Alive
 
-Controller->Model: \"Is vehicle Alive?"
+Controller->Model: \"Is Rockford Alive?"
 Model->Controller: \"Yes"
 note left of Controller: check Stack Order
 Controller->Model: \"Move this way"

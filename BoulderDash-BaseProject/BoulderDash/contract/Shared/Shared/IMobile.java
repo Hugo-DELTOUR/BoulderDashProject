@@ -2,7 +2,7 @@ package Shared;
 
 import java.awt.Point;
 
-public interface IMobile extends IElement{
+public interface IMobile {
 	public void moveUp();
 	public void moveDown();
 	public void moveRight();
