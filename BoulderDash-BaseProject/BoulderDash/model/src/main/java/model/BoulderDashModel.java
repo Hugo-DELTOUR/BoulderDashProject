@@ -4,6 +4,9 @@ public class BoulderDashModel implements IBoulderDashModel{
 	private IMap map;
 	private IMobile Rockford;
 	
+	public BoulderDashModel(int mapcharged, int startx, int starty) {
+		// TODO Auto-generated constructor stub
+	}
 	public IMap getMap() {
 		return map;
 		

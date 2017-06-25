@@ -15,8 +15,8 @@ import view.IBoulderDashView;
 public abstract class Main {
 
 	private static final int mapCharged = 1;
-	private static final int startX;
-	private static final int startY;
+	private static final int startX = 1;
+	private static final int startY = 1;
 	
     /**
      * The main method.
@@ -28,7 +28,7 @@ public abstract class Main {
         final IBoulderDashModel model = new BoulderDashModel(mapCharged, startX, startY);
         final IBoulderDashView view = new BoulderDashView(model.getMap(), model.getRockford());
     	final IBoulderDashController controller = new BoulderDashController(view, model);
-    	view.setOrderPerformer(controller.getOrderPerformer);
+    	view.setOrderPerformer(controller.getOrderPerformer());
         controller.play();
         }
     }
