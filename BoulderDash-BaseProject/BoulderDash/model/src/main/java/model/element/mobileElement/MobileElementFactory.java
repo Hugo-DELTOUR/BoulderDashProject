@@ -3,8 +3,8 @@ package model.element.mobileElement;
 public class MobileElementFactory {
 	
 	/**
-	*
-	*
+	*@author Robin
+	*Factory that create Mobile Elements
 	*
 	*/
 	private static Diamond diamond = new Diamond();
