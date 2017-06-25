@@ -32,13 +32,16 @@ import Shared.UserOrder;
 import fr.exia.showboard.BoardFrame;
 
 public abstract class BoulderDashView implements IBoulderDashView, Runnable, KeyListener, ActionListener, IBoulderDashController{
-	
+	/**
+	 * Creation of the variable
+	 */
 	private int squareSize = 1;
 	private Rectangle closeView;
 	private int view = 600;
 	private IMap map;
 	private IMobile rockford;
 	private IOrderPerformer orderPerformer;
+	
 	/**
 	 * @param map
 	 * @param rockford
