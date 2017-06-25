@@ -2,7 +2,9 @@ package Shared;
 
 import java.awt.Point;
 
-public interface IMobile {
+import fr.exia.showboard.IPawn;
+
+public interface IMobile extends IElement,IPawn {
 	public void moveUp();
 	public void moveDown();
 	public void moveRight();
