@@ -9,13 +9,11 @@ import model.IBoulderDashModel;
 import view.IBoulderDashView;
 
 /**
- * <h1>The Class ControllerFacade provides a facade of the Controller
- * component.</h1>
+ * <h1>The Class BoulderDashController provides all the Controllers Methods.</h1>
  *
- * first @author Jean-Aymeric DIET jadiet@cesi.fr
- * second @author Robin MAISANO robin.maisano@viacesi.fr
+ * @author Robin MAISANO robin.maisano@viacesi.fr
  * 
- * @version 2.0
+ * @version 1.0
  */
 public class BoulderDashController implements IBoulderDashController, IOrderPerformer {
 
