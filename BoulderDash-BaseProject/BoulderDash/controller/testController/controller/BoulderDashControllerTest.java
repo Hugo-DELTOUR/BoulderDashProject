@@ -142,6 +142,12 @@ public class BoulderDashControllerTest {
 			return null;
 		}
 
+		@Override
+		public void updateModel() {
+			// TODO Auto-generated method stub
+			
+		}
+
 	}
 
 }

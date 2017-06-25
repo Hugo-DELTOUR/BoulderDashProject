@@ -1,6 +1,6 @@
 package model;
 
-public class BoulderDashModel {
+public class BoulderDashModel implements IBoulderDashModel{
 	private IMap map;
 	private IMobile Rockford;
 	
@@ -28,6 +28,10 @@ public class BoulderDashModel {
 		/** 
 		 * This is the setter of the variable "Rockford".
 		 */
+	}
+	@Override
+	public void updateModel() {
+		this.map.updateMap();
 	}
 	
 }
