@@ -12,12 +12,13 @@ public class Sprite {
 	private String imageName;
 	private char consoleImage;
 	private Boolean imageLoaded;
-		
-	public Sprite(char character, String imageName){
+	
+	public Sprite(Character character, String name){
 		this.consoleImage = character;
-		this.imageName = imageName;
+		this.imageName = name;
 	}
 	
+
 	public Image getImage() {
 		return image;
 	}
@@ -27,7 +28,7 @@ public class Sprite {
 	}
 
 	public String getImageName() {
-		return this.imageName;
+		return imageName;
 	}
 
 	public void setImageName(String imageName) {
@@ -35,7 +36,7 @@ public class Sprite {
 	}
 
 	public char getConsoleImage() {
-		return this.consoleImage;
+		return consoleImage;
 	}
 
 	public void setConsoleImage(char consoleImage) {
@@ -47,10 +48,13 @@ public class Sprite {
 	}
 	
 	public Boolean isNameLoaded(){
-		return this.imageLoaded;
+		return true;
 	}
 	
-	public void loadedImage() throws IOException{
-		this.setImage(ImageIO.read(new File("ress/" + this.getImageName())));
+	public final void loadImage() throws IOException {
+	        this.setImage(ImageIO.read(new File("ress/" + this.getImageName())));
 	}
+	
+	
+	
 }
