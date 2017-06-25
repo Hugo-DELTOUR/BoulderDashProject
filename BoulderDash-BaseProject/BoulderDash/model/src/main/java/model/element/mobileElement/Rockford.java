@@ -33,6 +33,9 @@ public class Rockford extends Mobile {
 	
 	}
 
+	public Rockford(){
+		super();
+	}
 	
 
 	public void doNothing(){

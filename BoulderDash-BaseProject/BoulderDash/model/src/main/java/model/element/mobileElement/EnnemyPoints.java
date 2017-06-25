@@ -38,6 +38,9 @@ public class EnnemyPoints extends Ennemy{
 		
 		}
 	
+	public EnnemyPoints(){
+		super();
+	}
 	
 	public void loot(){
 		

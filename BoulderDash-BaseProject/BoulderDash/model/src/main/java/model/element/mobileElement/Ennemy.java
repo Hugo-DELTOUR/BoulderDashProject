@@ -34,6 +34,9 @@ public class Ennemy extends Mobile {
 	} 
 	
 
+	public Ennemy(){
+		
+	}
 	
 	
 	public void doNothing(){

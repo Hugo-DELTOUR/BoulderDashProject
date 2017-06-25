@@ -26,6 +26,10 @@ public class Mobile extends Element  implements IMobile{
 		 */
 	}
 	
+	public Mobile(){
+		super();
+	}
+	
 	public char getConsoleImage() {
 		return consoleImage;
 		

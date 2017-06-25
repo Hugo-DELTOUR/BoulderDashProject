@@ -35,6 +35,9 @@ public class Rock extends Mobile {
 	}
 	
 
+	public Rock(){
+		super();
+	}
 	
 	
 	public void doNothing(){

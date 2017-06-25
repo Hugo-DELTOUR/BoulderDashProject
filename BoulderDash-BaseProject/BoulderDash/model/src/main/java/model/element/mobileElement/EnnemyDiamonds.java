@@ -37,6 +37,9 @@ public class EnnemyDiamonds extends Ennemy  {
 		 */
 	}
 
+	public EnnemyDiamonds(){
+		super();
+	}
 	
 	
 	public void loot(){

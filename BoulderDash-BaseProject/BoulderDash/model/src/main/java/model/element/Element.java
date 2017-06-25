@@ -23,6 +23,10 @@ public class Element extends BoulderDashModel implements IElement{
 		 * It defines this as a char, as a name and as a permeability.
 		 */
     }
+	
+	public Element(){
+		
+	}
 
 	public Sprite getSprite() {
 		return sprite;

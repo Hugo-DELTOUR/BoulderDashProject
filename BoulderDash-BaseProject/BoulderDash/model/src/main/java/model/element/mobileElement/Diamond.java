@@ -35,6 +35,10 @@ public class Diamond extends Mobile {
 		
 	}
 	
+	public Diamond(){
+		super();
+	}
+	
 	public void doNothing(){
 		this.getMap().setMobileHasChanged();
 
