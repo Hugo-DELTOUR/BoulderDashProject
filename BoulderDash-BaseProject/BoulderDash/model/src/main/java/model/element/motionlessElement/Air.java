@@ -1,28 +1,33 @@
 package model.element.motionlessElement;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-
-import javax.imageio.ImageIO;
+import java.io.IOException;
 
 import common.Permeability;
-import common.Sprite;
 
 public class Air extends MotionlessElement {
 
-	static BufferedImage bigImg = ImageIO.read(new File("ress/74359.png"));
-	
 	final static int width = 16;
 	final static int height = 16;
-	final static int rows = 5;
-	final static int cols = 5;
-	
-	public static final Sprite sprite = new Sprite(' ', bigImg.getSubimage(cols * width, rows *height ,width,height));
+	final static int rows = 0;
+	final static int cols = 2;
 
 	
-	public Air(Sprite sprite, Permeability permeability) {
-		super(sprite, permeability);
-		// TODO Auto-generated constructor stub
+	
+	public Air()  {
+		super(' ', "74359.png" , Permeability.PENETRABLE);
+		try {
+			 this.getSprite().loadImage();//.getSubimage(rows * width, cols * height, width, height);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		/**
+		 * This is the constructor from "Air".
+		 * It defines this as a char -> ' ', as a sprite and it also sets his permeability to penetrable.
+		 */
+		
+		
 	}
-
+  
 }

@@ -1,8 +1,9 @@
 package model;
 
+import java.io.IOException;
+
 public interface ICAD {
-	public void connect();
-	public void close();
-	public char[][]getMap(int idMap);
-	public void saveNewMap();
+	public void Connect () throws Exception;
+	public void Close () throws Exception;
+	public char[][] getMapSQL (String identifiant, int idMap )  throws IOException;
 }

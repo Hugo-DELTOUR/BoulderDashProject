@@ -1,18 +1,31 @@
 package model.element.motionlessElement;
 
-import common.Sprite;
-import fr.exia.insanevehicles.shared.Permeability;
+import java.io.IOException;
+
+import common.Permeability;
 
 public class SpecialStoneBlock extends MotionlessElement{
 
-	public static final Sprite sprite = new Sprite('W', /*TODO*/);
+	final static int width = 16;
+	final static int height = 16;
+	final static int rows = 0;
+	final static int cols = 7;
 	
-	public SpecialStoneBlock(Sprite sprite, common.Permeability permeability) {
-		super(sprite, permeability);
-		// TODO Auto-generated constructor stub
+	
+	public SpecialStoneBlock()  {
+		super('W', "74359.png" , Permeability.PENETRABLE);
+		try {
+			this.getSprite().loadImage();//.getSubimage(rows * width, cols * height, width, height);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		/**
+		 * This is the constructor from "SpecialStoneBlock".
+		 * It defines this as a char -> 'W', as a sprite and it also sets his permeability to penetrable
+		 */
+		
 	}
-
-
 
 	
 }

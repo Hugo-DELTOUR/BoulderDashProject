@@ -10,6 +10,8 @@ import org.junit.Test;
 
 public class MapTest {
 
+	private Map map;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -18,8 +20,10 @@ public class MapTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+
 	@Before
 	public void setUp() throws Exception {
+		this.map = new Map(null);
 	}
 
 	@After
@@ -27,24 +31,17 @@ public class MapTest {
 	}
 
 	@Test
-	public void testLoadFile() {
-		fail("Not yet implemented");
-	}
-	@Test
 	public void testSetWidth() {
-		fail("Not yet implemented");
+		int width = 0;
+        assertEquals(width, map.getWidth());
 	}
+
 	@Test
-	public void testSetheight() {
-		fail("Not yet implemented");
+	public void testSetHeigth() {
+		int height = 0;
+        assertEquals(height, map.getHeight());
 	}
-	@Test
-	public void testOnTheMapXY() {
-		fail("Not yet implemented");
-	}
-	@Test
-	public void testSetMobileAsChanged() {
-		fail("Not yet implemented");
-	}
+
+	
 
 }

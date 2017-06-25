@@ -1,6 +1,13 @@
 package common;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+
 
 public class Sprite {
 	
@@ -9,12 +16,11 @@ public class Sprite {
 	private char consoleImage;
 	private Boolean imageLoaded;
 	
-	public Sprite(char character){
-		
-	}
-	
-	public Sprite(char character, String imageName){
-		
+
+	public Sprite(Character character, String name) {
+		this.consoleImage = character;
+		this.imageName = name;
+
 	}
 
 	public Image getImage() {
@@ -48,6 +54,10 @@ public class Sprite {
 	public Boolean isNameLoaded(){
 		return true;
 	}
+	
+	 public final void loadImage() throws IOException {
+	        this.setImage(ImageIO.read(new File("ress" + this.getImageName())));
+	    }
 	
 	public void loadedImage(){
 		

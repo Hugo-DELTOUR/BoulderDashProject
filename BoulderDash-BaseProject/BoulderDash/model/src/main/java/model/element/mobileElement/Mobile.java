@@ -1,56 +1,90 @@
 package model.element.mobileElement;
 
-import java.awt.Point;
-import java.util.Observable;
-
-import javax.swing.text.Position;
-
+import java.awt.Image;
 import common.Permeability;
-import common.Sprite;
-import model.IElement;
 import model.IMap;
 import model.IMobile;
-import model.Map;
 import model.element.Element;
 
-public class Mobile extends Element  implements IMobile, IMap{
+public class Mobile extends Element  implements IMobile{
 
 
 	private Boolean alive;
 	private IMap map;
-	private Point position;
 	private char consoleImage;
+	private Image image;
+
+	public Mobile(int x, int y , final Character character, final String name , final Permeability permeability) {
+		super(character, name, permeability);
+		this.setX(x);
+		this.setY(y);	
+		
+		/**
+		 * This is the constructor from "Diamond".
+		 * It defines this as two int "x" and "y", as a character, as a name and as a permeability.
+		 * Moreover it sets the two coordinates "x" and "y".
+		 */
+	}
 	
 	public char getConsoleImage() {
 		return consoleImage;
+		
+		/** 
+		 * This is the getter of the variable "consoleImage".
+		 */
 	}
 
 	public void setConsoleImage(char consoleImage) {
 		this.consoleImage = consoleImage;
+		
+		/** 
+		 * This is the setter of the variable "consoleImage".
+		 */
 	}
 
 	public IMap getMap() {
 		return map;
+		/** 
+		 * This is the getter of the variable "map".
+		 */
 	}
 	public void setMap(IMap map) {
 		this.map = map;
+		/** 
+		 * This is the setter of the variable "map".
+		 */
 	}
 	
 	public void doNothing(){
-		this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
+        
+		/** 
+		 * This method notifies the map that the Mobile is not moving.
+		 */
 	}
 	
 	public Boolean isAlive(){
 		return this.alive;
+		/** 
+		 * This is the setter of the variable "alive".
+		 */
 	}
 	
 	public Boolean setAlive(Boolean alive){
 		return this.alive = alive;
+		
+		/** 
+		 * This is the getter of the variable "alive".
+		 */
 	}
 	
 	public void die(){
-		this.alive = false;
-        this.setMobileHasChanged();
+		this.setAlive(false);
+        this.getMap().setMobileHasChanged();
+        
+		/** 
+		 * This method sets the variable "alive" to false and notifies the map of the changement.
+		 */
 	}
 	
 	public Boolean isCrashed(){
@@ -59,49 +93,46 @@ public class Mobile extends Element  implements IMobile, IMap{
 	
 	public void moveUp(){
         this.setY(this.getY() - 1);
-        this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
+		/** 
+		 * This method increments X and notifies the map of the changement.
+		 */
 	}
 	
 	public void moveDown(){
         this.setY(this.getY() + 1);
-        this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
+		/** 
+		 * This method increments Y and notifies the map of the changement.
+		 */
+        
 	}
 	
 	public void moveLeft(){
         this.setX(this.getX() - 1);
-        this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
+		/** 
+		 * This method decrements Y and notifies the map of the changement.
+		 */
 	}
 	
 	public void moveRight(){
         this.setX(this.getX() + 1);
-        this.setMobileHasChanged();
+        this.getMap().setMobileHasChanged();
+		/** 
+		 * This method increments X and notifies the map of the changement.
+		 */
 	}
 	
-	public Mobile (Sprite sprite, IMap map, Permeability permeability){
-        super(sprite, permeability);
-        this.setMap(map);
-        this.position = new Point();
+	
+	@Override
+	public Image getImage() {
+		return this.image;	
+		/** 
+		 * This is the getter of the variable "image".
+		 */
 	}
 	
-	public Mobile (int x, int y, Sprite sprite, IMap map, Permeability permeability){
-        this(sprite, map, permeability);
-        this.setX(x);
-        this.setY(y);
-        
-	}
-	@Override
-	public void getImage() {
-		return this.image;		
-	}
-	@Override
-	public int getWidth() {
-        return this.width;
 
-	}
-	@Override
-	public int getHeight() {
-        return this.height;
-	}
-	
 	
 }
