@@ -1,16 +1,11 @@
 package model.element.mobileElement;
 
 import java.awt.Point;
-import java.util.Observable;
-
-import javax.swing.text.Position;
 
 import common.Permeability;
 import common.Sprite;
-import model.IElement;
 import model.IMap;
 import model.IMobile;
-import model.Map;
 import model.element.Element;
 
 public class Mobile extends Element  implements IMobile, IMap{
@@ -88,6 +83,10 @@ public class Mobile extends Element  implements IMobile, IMap{
         this.setX(x);
         this.setY(y);
         
+	}
+	
+	public Mobile(){
+		super();
 	}
 	@Override
 	public void getImage() {

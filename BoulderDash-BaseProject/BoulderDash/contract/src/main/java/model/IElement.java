@@ -1,9 +1,16 @@
 package model;
 
+import java.awt.Image;
+
 import common.Permeability;
+import common.Sprite;
 
 public interface IElement {
-	public void getSprite();
+	public Sprite getSprite();
 	public Permeability getPermeability();
-	public void getImage();
+	public Image getImage();
+	public void moveRight();
+	public void moveUp();
+	public void moveLeft();
+	public void moveDown();
 }

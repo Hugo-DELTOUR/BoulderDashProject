@@ -1,6 +1,6 @@
 package model.element.mobileElement;
 
-import java.awt.Point;
+import javax.swing.text.Position;
 
 import common.Sprite;
 import model.IMap;
@@ -23,6 +23,11 @@ public class EnnemyPoints extends Ennemy{
 	}
 	
 	
+	public EnnemyPoints() {
+		super();
+	}
+
+
 	public void loot(){
 		
 	}
@@ -68,7 +73,8 @@ public class EnnemyPoints extends Ennemy{
 		
 	}
 	
-	public Point position(){
+	public Position position(){
+		return null;
 
 	}
 	

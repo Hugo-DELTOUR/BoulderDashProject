@@ -8,7 +8,7 @@ import model.IMap;
 
 public class Ennemy extends Mobile {
 
-	public static final Sprite sprite = new Sprite('@', /*TODO*/);
+	public static final Sprite sprite = new Sprite('@', null/*TODO*/);
 	private static Sprite spriteAnim1;
 	private static Sprite spriteAnim2;
 	private static Sprite spriteAnim3;
@@ -20,6 +20,9 @@ public class Ennemy extends Mobile {
 		super(x,y, sprite, map, Permeability.BLOCKING);
 	}
 	
+	public Ennemy(){
+		super();
+	}
 	
 	public void doNothing(){
 		 this.setMobileHasChanged();
@@ -64,7 +67,7 @@ public class Ennemy extends Mobile {
 	}
 	
 	public Position position(){
-		
+		return null;
 	}
 
 	

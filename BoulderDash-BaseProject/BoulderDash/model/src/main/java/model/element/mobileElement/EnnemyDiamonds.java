@@ -2,7 +2,6 @@ package model.element.mobileElement;
 
 import javax.swing.text.Position;
 
-import common.Permeability;
 import common.Sprite;
 import model.IMap;
 
@@ -23,6 +22,10 @@ public class EnnemyDiamonds extends Ennemy  {
 		
 	}
 	
+	public EnnemyDiamonds(){
+		super();
+	}
+	
 	
 	public void loot(){
 		
@@ -35,7 +38,7 @@ public class EnnemyDiamonds extends Ennemy  {
 	}
 	
 	public void die(){
-		this.this.setAlive(false);
+		this.setAlive(false);
         this.setMobileHasChanged();
 	}
 	
@@ -72,7 +75,7 @@ public class EnnemyDiamonds extends Ennemy  {
 	}
 	
 	public Position position(){
-		
+		return null;
 	}
 
 

@@ -6,7 +6,7 @@ import model.IMap;
 
 public class Diamond extends Mobile {
 	
-	public static final Sprite sprite = new Sprite('X', /*TODO*/);
+	public static final Sprite sprite = new Sprite('X', null/*TODO*/);
 	private Sprite spriteAnim1;
 	private Sprite spriteAnim2;
 	private Sprite spriteAnim3;
@@ -18,6 +18,10 @@ public class Diamond extends Mobile {
 		this.setX(x);
 		this.setY(y);	}
 	
+	public Diamond() {
+		super();
+	}
+
 	public void doNothing(){
 		this.setMobileHasChanged();
 		this.setSprite(spriteAnim1);
