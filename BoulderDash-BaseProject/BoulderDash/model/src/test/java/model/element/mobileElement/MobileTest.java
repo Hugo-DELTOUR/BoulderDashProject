@@ -1,6 +1,6 @@
 package model.element.mobileElement;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,7 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import common.Permeability;
-import model.IMap;
 
 public class MobileTest extends Mobile{
 
@@ -35,7 +34,7 @@ public class MobileTest extends Mobile{
 	@Test
 	public void testConsoleImage() {
 		char test ='x';
-		assertEquals(test, test.getConsoleImage());
+		assertEquals(test, this.test.getConsoleImage());
 	}
 	@Test
 	public void testSetX() {
@@ -45,7 +44,6 @@ public class MobileTest extends Mobile{
 	public void testSetY() {
 		int y = 5;
 		assertEquals(y, test.getY() );	}
-	}
 	@Test
 	
 	public void testIsAlive() {

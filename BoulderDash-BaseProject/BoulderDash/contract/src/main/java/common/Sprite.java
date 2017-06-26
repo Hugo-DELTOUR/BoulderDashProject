@@ -61,6 +61,11 @@ public class Sprite {
 	public void loadedImage(){
 		
 	}
+
+	public Object[] getSprite() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

@@ -3,13 +3,10 @@ package model.dao;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 
 import model.ICAD;
-import model.IElement;
 
 
 public class BoulderDashBDDConnector implements ICAD{
@@ -64,37 +61,45 @@ public class BoulderDashBDDConnector implements ICAD{
 			 */
 		}
 
-		
-		public char[][] getMapSQL (String identifiant, int idMap )  throws IOException{	
-			Connect();
-			int Width;
-			int Height;
-			String[] tableauDecoupage = null;
-			String stringSQl;
-			ResultSet ligneSQL;
-		
-			ligneSQL = statement.executeQuery( "SELECT * WHERE idMap ==" + idMap + " " + "FROM info;");
-			ligneSQL.next();
-			Width = ligneSQL.getInt(2);	 
-			Height = ligneSQL.getInt(3);
-			
-			char[][] tableMap = new char[Width][Height];
-			
-			
-			for (int y = 0 ; y < (int) Height; y++){							
-				ligneSQL = statement.executeQuery( "SELECT ligneMap WHERE idMap ==" + idMap + " AND " + "numLigneMap == "+ y + "FROM BaseMap;");
-				tableauDecoupage = ligneSQL.split("");
-				for(int x = 0; x< tableauDecoupage.length; x++){ 
-					tableMap[x][y] = tableauDecoupage[x];						
-				}
-			}
-			return tableMap[][];
-			
-			/** 
-			 * This method reads the database and return "tableMap[][]" which represent the map in character.
-			*/
-			
+
+
+		@Override
+		public char[][] getMapSQL(String identifiant, int idMap) throws IOException {
+			// TODO Auto-generated method stub
+			return null;
 		}
+
+		
+//		public char[][] getMapSQL (String identifiant, int idMap )  throws IOException{	
+//			Connect();
+//			int Width;
+//			int Height;
+//			String[] tableauDecoupage = null;
+//			String stringSQl;
+//			ResultSet ligneSQL;
+//		
+//			ligneSQL = statement.executeQuery( "SELECT * WHERE idMap ==" + idMap + " " + "FROM info;");
+//			ligneSQL.next();
+//			Width = ligneSQL.getInt(2);	 
+//			Height = ligneSQL.getInt(3);
+//			
+//			char[][] tableMap = new char[Width][Height];
+//			
+//			
+//			for (int y = 0 ; y < (int) Height; y++){							
+//				ligneSQL = statement.executeQuery( "SELECT ligneMap WHERE idMap ==" + idMap + " AND " + "numLigneMap == "+ y + "FROM BaseMap;");
+//				tableauDecoupage = ligneSQL.split("");
+//				for(int x = 0; x< tableauDecoupage.length; x++){ 
+//					tableMap[x][y] = tableauDecoupage[x];						
+//				}
+//			}
+//			return tableMap[][];
+//			
+//			/** 
+//			 * This method reads the database and return "tableMap[][]" which represent the map in character.
+//			*/
+//			
+//		}
 		
 }
 

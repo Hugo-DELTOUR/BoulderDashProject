@@ -25,7 +25,7 @@ public class Element extends BoulderDashModel implements IElement{
     }
 	
 	public Element(){
-		
+		super();
 	}
 
 	public Sprite getSprite() {
@@ -116,5 +116,59 @@ public class Element extends BoulderDashModel implements IElement{
 		/** 
 		 * This is the setter of the variable "y".
 		 */
+	}
+
+	@Override
+	public boolean isFalling() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void die() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setFalling(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isAirEverywhere() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int getDirection() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void moveUp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveLeft() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveDown() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveRight() {
+		// TODO Auto-generated method stub
+		
 	}
 }

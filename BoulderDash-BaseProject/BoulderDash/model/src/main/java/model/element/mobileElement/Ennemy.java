@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import common.Permeability;
 import common.Sprite;
-import common.UserOrder;
 
 public class Ennemy extends Mobile {
 
@@ -17,7 +16,7 @@ public class Ennemy extends Mobile {
 	private static Sprite spriteExplode;
 
 
-	private UserOrder direction;
+	private int direction;
 
 	
 	public Ennemy(int x, int y, Character character, String name, Permeability permeability) throws IOException {
@@ -112,7 +111,7 @@ public class Ennemy extends Mobile {
 	
 
 
-	public UserOrder getDirection() {
+	public int getDirection() {
 		return direction;
 		
 		/** 
@@ -121,7 +120,7 @@ public class Ennemy extends Mobile {
 	}
 
 
-	public void setDirection(UserOrder direction) {
+	public void setDirection(int direction) {
 		this.direction = direction;
 		/** 
 		 * This is the setter of the variable "direction".

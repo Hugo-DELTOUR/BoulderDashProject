@@ -7,6 +7,9 @@ public class BoulderDashModel implements IBoulderDashModel{
 	public BoulderDashModel(int mapcharged, int startx, int starty) {
 		// TODO Auto-generated constructor stub
 	}
+	public BoulderDashModel() {
+		// TODO Auto-generated constructor stub
+	}
 	public IMap getMap() {
 		return map;
 		

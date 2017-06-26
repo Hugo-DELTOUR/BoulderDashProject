@@ -1,9 +1,12 @@
 package main;
 
+import java.io.IOException;
+
 import controller.BoulderDashController;
 import controller.IBoulderDashController;
 import model.BoulderDashModel;
 import model.IBoulderDashModel;
+import view.BoulderDashView;
 import view.IBoulderDashView;
 
 /**
@@ -23,8 +26,10 @@ public abstract class Main {
      *
      * @param args
      *            the arguments
+     * @throws IOException 
+     * @throws InterruptedException 
      */
-    public static void main(final String[] args){
+    public static void main(final String[] args) throws IOException, InterruptedException{
         final IBoulderDashModel model = new BoulderDashModel(mapCharged, startX, startY);
         final IBoulderDashView view = new BoulderDashView(model.getMap(), model.getRockford());
     	final IBoulderDashController controller = new BoulderDashController(view, model);

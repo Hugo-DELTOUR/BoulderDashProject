@@ -1,7 +1,5 @@
 package model.element;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -40,7 +38,7 @@ public class ElementTest  {
 		
 		Sprite sprite2 = new Sprite('c', "titi");
 		
-		Assert.assertArrayEquals(sprite2, sprite2.getSprite());
+		Assert.assertEquals(sprite2, sprite2.getSprite());
 		
 	}
 	

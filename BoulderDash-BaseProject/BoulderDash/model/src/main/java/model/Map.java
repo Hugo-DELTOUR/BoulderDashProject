@@ -214,20 +214,26 @@ public class Map extends Observable implements IMap, ICAD  {
 					}
 				} else if (this.getOnTheMapXY(x, y).getClass().isInstance(Ennemy.class)) {
 					if (this.getOnTheMapXY(x, y).isAirEverywhere()) {
+						/**In direction :
+						 *  1 is Up
+						 *  2 is down
+						 *  3 is left
+						 *  4 is right
+						 */
 						switch (this.getOnTheMapXY(x, y).getDirection()) {
-						case up:
+						case 1:
 							this.getOnTheMapXY(x, y).moveUp();
 							this.setAirOnTheMapXY(x, y);
 							break;
-						case down:
+						case 2:
 							this.getOnTheMapXY(x, y).moveDown();
 							this.setAirOnTheMapXY(x, y);
 							break;
-						case Right:
+						case 4:
 							this.getOnTheMapXY(x, y).moveRight();
 							this.setAirOnTheMapXY(x, y);
 							break;
-						case Left:
+						case 3:
 							this.getOnTheMapXY(x, y).moveLeft();
 							this.setAirOnTheMapXY(x, y);
 							break;
@@ -238,7 +244,7 @@ public class Map extends Observable implements IMap, ICAD  {
 						}
 					} else {
 						switch (this.getOnTheMapXY(x, y).getDirection()) {
-						case up:
+						case 1:
 							if (this.getOnTheMapXY(x + 1, y).getClass().isInstance(Air.class)) {
 								this.getOnTheMapXY(x, y).moveRight();
 								this.setAirOnTheMapXY(x, y);
@@ -253,7 +259,7 @@ public class Map extends Observable implements IMap, ICAD  {
 								this.setAirOnTheMapXY(x, y);
 							}
 							break;
-						case left:
+						case 3:
 							if (this.getOnTheMapXY(x, y - 1).getClass().isInstance(Air.class)) {
 								this.getOnTheMapXY(x, y).moveUp();
 								this.setAirOnTheMapXY(x, y);
@@ -268,7 +274,7 @@ public class Map extends Observable implements IMap, ICAD  {
 								this.setAirOnTheMapXY(x, y);
 							}
 							break;
-						case down:
+						case 2:
 							if (this.getOnTheMapXY(x - 1, y).getClass().isInstance(Air.class)) {
 								this.getOnTheMapXY(x, y).moveLeft();
 								this.setAirOnTheMapXY(x, y);
@@ -283,7 +289,7 @@ public class Map extends Observable implements IMap, ICAD  {
 								this.setAirOnTheMapXY(x, y);
 							}
 							break;
-						case right:
+						case 4:
 							if (this.getOnTheMapXY(x, y + 1).getClass().isInstance(Air.class)) {
 								this.getOnTheMapXY(x, y).moveDown();
 								this.setAirOnTheMapXY(x, y);
@@ -320,6 +326,10 @@ public class Map extends Observable implements IMap, ICAD  {
 			}
 		}
 
+	}
+	private void scoreAugmentation(int i) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

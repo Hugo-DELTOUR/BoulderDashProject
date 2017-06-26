@@ -126,6 +126,12 @@ public class BoulderDashControllerTest {
 
 		}
 
+		@Override
+		public void setOrderPerformer(IOrderPerformer orderPerformer) {
+			// TODO Auto-generated method stub
+			
+		}
+
 	}
 
 	// TODO Erase this function when real one is disponible

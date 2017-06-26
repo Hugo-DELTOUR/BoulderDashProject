@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import common.Permeability;
 import common.Sprite;
-import common.UserOrder;
 
 public class EnnemyDiamonds extends Ennemy  {
 	
@@ -14,7 +13,7 @@ public class EnnemyDiamonds extends Ennemy  {
 	private static Sprite spriteAnim2;
 	private static Sprite spriteAnim3;
 	private static Sprite spriteAnim4;
-	private UserOrder direction;
+	private int direction;
 	final static int height = 16;
 	final static int width = 16;
 	final static int cols = 10;
@@ -117,7 +116,7 @@ public class EnnemyDiamonds extends Ennemy  {
 	    
 	}
 	
-	public UserOrder getDirection() {
+	public int getDirection() {
 		return direction;
 		/** 
 		 * This is the getter of the variable "direction".
@@ -125,7 +124,7 @@ public class EnnemyDiamonds extends Ennemy  {
 	}
 
 
-	public void setDirection(UserOrder direction) {
+	public void setDirection(int direction) {
 		this.direction = direction;
 		
 		/** 
