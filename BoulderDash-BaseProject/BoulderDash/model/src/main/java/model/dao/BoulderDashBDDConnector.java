@@ -1,167 +1,105 @@
 package model.dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * <h1>The Class BoulderDashBDDConnector.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
-final class BoulderDashBDDConnector {
+import model.ICAD;
 
-    /** The instance. */
-    private static BoulderDashBDDConnector instance;
 
-    /** The login. */
-    private static String                  user     = "root";
+public class BoulderDashBDDConnector implements ICAD{
+		
 
-    /** The password. */
-    private static String                  password = "";
+	
+	
+		final String url = "jdbc:mysql:////localhost/BoulderDashProject";
+		final String user = "root";
+		final String passwd = "";
+		Connection connection = null;
+		Statement statement = null;
+		
+		public void Connect (){
+			
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				System.out.println("Check the Drivers");
+				e.printStackTrace();
+			}
+			System.out.println("Driver OK");
+			
+			try {
+				connection = DriverManager.getConnection(url, user, passwd);
+				statement = connection.createStatement();
+			} catch (SQLException e1) {
+				System.out.println("Check the connection and the login");	
+				e1.printStackTrace();
+			}
+			System.out.println("Connection OK");
+			
+			/** 
+			 * This method connect the program with the data base. 
+			 * It uses a driver, an url (of the data base), a username and a password.
+			 */
+			
+		}
+		
+		
+		
+		public void Close() throws Exception {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				System.out.println("It can't close");
+				e.printStackTrace();
+			}
+			
+			/** 
+			 * This method closesthe connection to the data base.
+			 */
+		}
 
-    /** The url. */
-    private static String                  url      = "jdbc:mysql://localhost/boulderdash?useSSL=false&serverTimezone=UTC";
 
-    /** The connection. */
-    private Connection                     connection;
 
-    /** The statement. */
-    private Statement                      statement;
+		@Override
+		public char[][] getMapSQL(String identifiant, int idMap) throws IOException {
+			// TODO Auto-generated method stub
+			return null;
+		}
 
-    /**
-     * Instantiates a new boulder dash BDD connector.
-     */
-    private BoulderDashBDDConnector() {
-        this.open();
-    }
-
-    /**
-     * Gets the single instance of BoulderDashBDDConnector.
-     *
-     * @return single instance of BoulderDashBDDConnector
-     */
-    public static BoulderDashBDDConnector getInstance() {
-        if (instance == null) {
-            setInstance(new BoulderDashBDDConnector());
-        }
-        return instance;
-    }
-
-    /**
-     * Sets the instance.
-     *
-     * @param instance
-     *            the new instance
-     */
-    private static void setInstance(final BoulderDashBDDConnector instance) {
-        BoulderDashBDDConnector.instance = instance;
-    }
-
-    /**
-     * Open.
-     *
-     * @return true, if successful
-     */
-    private boolean open() {
-        try {
-            this.connection = DriverManager.getConnection(BoulderDashBDDConnector.url, BoulderDashBDDConnector.user,
-                    BoulderDashBDDConnector.password);
-            this.statement = this.connection.createStatement();
-            return true;
-        } catch (final SQLException exception) {
-            exception.printStackTrace();
-        }
-        return false;
-    }
-
-    /**
-     * Execute query.
-     *
-     * @param query
-     *            the query
-     * @return the result set
-     */
-    public ResultSet executeQuery(final String query) {
-        try {
-            return this.getStatement().executeQuery(query);
-        } catch (final SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * Prepare call.
-     *
-     * @param query
-     *            the query
-     * @return the java.sql. callable statement
-     */
-    public java.sql.CallableStatement prepareCall(final String query) {
-        try {
-            return this.getConnection().prepareCall(query);
-        } catch (final SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * Execute update.
-     *
-     * @param query
-     *            the query
-     * @return the int
-     */
-    public int executeUpdate(final String query) {
-        try {
-            return this.statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
-        } catch (final SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    /**
-     * Gets the connection.
-     *
-     * @return the connection
-     */
-    public Connection getConnection() {
-        return this.connection;
-    }
-
-    /**
-     * Sets the connection.
-     *
-     * @param connection
-     *            the new connection
-     */
-    public void setConnection(final Connection connection) {
-        this.connection = connection;
-    }
-
-    /**
-     * Gets the statement.
-     *
-     * @return the statement
-     */
-    public Statement getStatement() {
-        return this.statement;
-    }
-
-    /**
-     * Sets the statement.
-     *
-     * @param statement
-     *            the new statement
-     */
-    public void setStatement(final Statement statement) {
-        this.statement = statement;
-    }
-
+		
+//		public char[][] getMapSQL (String identifiant, int idMap )  throws IOException{	
+//			Connect();
+//			int Width;
+//			int Height;
+//			String[] tableauDecoupage = null;
+//			String stringSQl;
+//			ResultSet ligneSQL;
+//		
+//			ligneSQL = statement.executeQuery( "SELECT * WHERE idMap ==" + idMap + " " + "FROM info;");
+//			ligneSQL.next();
+//			Width = ligneSQL.getInt(2);	 
+//			Height = ligneSQL.getInt(3);
+//			
+//			char[][] tableMap = new char[Width][Height];
+//			
+//			
+//			for (int y = 0 ; y < (int) Height; y++){							
+//				ligneSQL = statement.executeQuery( "SELECT ligneMap WHERE idMap ==" + idMap + " AND " + "numLigneMap == "+ y + "FROM BaseMap;");
+//				tableauDecoupage = ligneSQL.split("");
+//				for(int x = 0; x< tableauDecoupage.length; x++){ 
+//					tableMap[x][y] = tableauDecoupage[x];						
+//				}
+//			}
+//			return tableMap[][];
+//			
+//			/** 
+//			 * This method reads the database and return "tableMap[][]" which represent the map in character.
+//			*/
+//			
+//		}
+		
 }
+
