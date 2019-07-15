@@ -1,6 +1,5 @@
 package controller;
 
-import java.awt.Point;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -12,7 +11,6 @@ import view.IBoulderDashView;
  * <h1>The Class BoulderDashController provides all the Controllers Methods.</h1>
  *
  * @author Robin MAISANO robin.maisano@viacesi.fr
- * 
  * @version 1.0
  */
 public class BoulderDashController implements IBoulderDashController, IOrderPerformer {

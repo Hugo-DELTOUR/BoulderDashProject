@@ -177,8 +177,7 @@ public class Map extends Observable implements IMap, ICAD  {
 		for (int y = this.getHeight() - 2; y >= 0; y--) {
 			for (int x = 0; x < this.getWidth(); x++) {
 
-				if (this.getOnTheMapXY(x, y).getClass().isInstance(Diamond.class)
-						|| this.getOnTheMapXY(x, y).getClass().isInstance(Rock.class)) {
+				if (isDiamondOrRock(y, x)) {
 					if (this.getOnTheMapXY(x, y).isFalling()) {
 						if (this.getOnTheMapXY(x, y + 1).getClass().isInstance(Air.class)) {
 							this.setOnTheMapXY(this.getOnTheMapXY(x, y), x, y + 1);
@@ -326,6 +325,10 @@ public class Map extends Observable implements IMap, ICAD  {
 			}
 		}
 
+	}
+	private boolean isDiamondOrRock(int y, int x) {
+		return this.getOnTheMapXY(x, y).getClass().isInstance(Diamond.class)
+				|| this.getOnTheMapXY(x, y).getClass().isInstance(Rock.class);
 	}
 	private void scoreAugmentation(int i) {
 		// TODO Auto-generated method stub
