@@ -1,7 +1,11 @@
 package Shared;
 
-public interface IElement {
-	public void getSprite();
-	public void getPermeability();
-	public void getImage();
+import java.awt.Image;
+
+import fr.exia.showboard.ISquare;
+
+public interface IElement extends ISquare{
+	public Sprite getSprite();
+	public Permeability getPermeability();
+	public Image getImage();
 }
